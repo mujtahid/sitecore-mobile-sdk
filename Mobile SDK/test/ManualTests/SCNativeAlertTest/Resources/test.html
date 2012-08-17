@@ -1,0 +1,50 @@
+<html>
+   <head>
+      <script type="text/javascript">
+         function showAlert()
+         {
+            scmobile.console.log( 'start alert' );
+            scmobile.notification.alert( "Press a button and change background color"
+                  , "Someone from these:j"
+                  ,function( buttonIndex ) 
+                  { 
+                     if ( buttonIndex == 0 )
+                     {
+                        scmobile.notification.alert( "And you choose:"
+                                                      , "Green color"
+                                                      , function(){document.bgColor = '#11FF00';}
+                                                      , "Apply"  ); 
+                     }
+                     else if ( buttonIndex == 1 )
+                     {
+                         scmobile.notification.alert( "Noce choise!"
+                                                      , "Positive Yellow :)"
+                                                      , function(){document.bgColor = '#FFFF00';}
+                                                      , "Apply"  ); 
+                     }  
+                     else if ( buttonIndex == 2 )
+                     {
+                         scmobile.notification.alert( "Well, you choose"
+                                                      , "Blue"
+                                                      , function(){document.bgColor = '#0000FF';}
+                                                      , "Apply"  ); 
+                     } 
+                     else
+                     {
+                         scmobile.notification.alert( "Hm..."
+                                                      , "Ok, never mind :)"
+                                                      , function(){}
+                                                      , "Close"  ); 
+                     }
+                  }
+                  , "Green,Yellow,Blue,Cancel" );
+            //device2web.console.log( 'start alert' );
+            //device2web.notification.alert;
+         }
+         </script>
+   </head>
+   <body>
+      <h2>Alert's test</h2>
+      <button type="button" onclick="showAlert()">Let's start a test!</button>
+   </body>
+</html>

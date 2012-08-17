@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B18B9BA151B3B0B00F24944 /* map_view.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B92A34B151B35E50048F508 /* map_view.js */; };
+		1B18B9BB151B3B0D00F24944 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 1B92A348151B35BF0048F508 /* test.html */; };
+		1B41A867151CA53600566B1B /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B41A866151CA53600566B1B /* libstdc++.dylib */; };
+		1B41A869151CA56B00566B1B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B41A868151CA56B00566B1B /* AVFoundation.framework */; };
+		1B41A86B151CA5A400566B1B /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B41A86A151CA5A400566B1B /* libiconv.dylib */; };
+		1B92A314151B2CFD0048F508 /* libSCAllMobileSDKLibs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB52404151B2C8F006BEDBF /* libSCAllMobileSDKLibs.a */; };
+		1B92A320151B343A0048F508 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A31F151B343A0048F508 /* libxml2.dylib */; };
+		1B92A322151B344E0048F508 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A321151B344E0048F508 /* CFNetwork.framework */; };
+		1B92A324151B345F0048F508 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A323151B345F0048F508 /* libz.dylib */; };
+		1B92A327151B348F0048F508 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A325151B348F0048F508 /* AddressBook.framework */; };
+		1B92A328151B348F0048F508 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A326151B348F0048F508 /* AddressBookUI.framework */; };
+		1B92A32A151B34A00048F508 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A329151B34A00048F508 /* CoreMotion.framework */; };
+		1B92A32C151B34B30048F508 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A32B151B34B30048F508 /* Twitter.framework */; };
+		1B92A332151B34EA0048F508 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A32D151B34EA0048F508 /* CoreLocation.framework */; };
+		1B92A333151B34EA0048F508 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A32E151B34EA0048F508 /* CoreMedia.framework */; };
+		1B92A334151B34EA0048F508 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A32F151B34EA0048F508 /* CoreVideo.framework */; };
+		1B92A335151B34EA0048F508 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A330151B34EA0048F508 /* MapKit.framework */; };
+		1B92A336151B34EA0048F508 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A331151B34EA0048F508 /* MessageUI.framework */; };
+		1B92A338151B34FC0048F508 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B92A337151B34FC0048F508 /* AudioToolbox.framework */; };
+		1BB52276151B1ADE006BEDBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB52275151B1ADE006BEDBF /* UIKit.framework */; };
+		1BB52278151B1ADE006BEDBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB52277151B1ADE006BEDBF /* Foundation.framework */; };
+		1BB5227A151B1ADE006BEDBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB52279151B1ADE006BEDBF /* CoreGraphics.framework */; };
+		1BB52280151B1ADE006BEDBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BB5227E151B1ADE006BEDBF /* InfoPlist.strings */; };
+		1BB52282151B1ADF006BEDBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB52281151B1ADF006BEDBF /* main.m */; };
+		1BB522D8151B1AFE006BEDBF /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB522D7151B1AFE006BEDBF /* GHUnitIOS.framework */; };
+		1BB523F7151B2B4C006BEDBF /* WebMapKitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB523F6151B2B4C006BEDBF /* WebMapKitTest.m */; };
+		1BB523FB151B2BF0006BEDBF /* SCAsyncTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB523FA151B2BF0006BEDBF /* SCAsyncTestCase.m */; };
+		1BB523FE151B2C26006BEDBF /* SCWebViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB523FD151B2C26006BEDBF /* SCWebViewContainer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B92A312151B2CF30048F508 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB523FF151B2C8F006BEDBF /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B33DD8E1518C5BC00EEA9BA;
+			remoteInfo = SCAllMobileSDKLibs;
+		};
+		1BB52403151B2C8F006BEDBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB523FF151B2C8F006BEDBF /* SCAllMobileSDKLibs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1B33DD8F1518C5BC00EEA9BA;
+			remoteInfo = SCAllMobileSDKLibs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B41A866151CA53600566B1B /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		1B41A868151CA56B00566B1B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1B41A86A151CA5A400566B1B /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		1B92A31F151B343A0048F508 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		1B92A321151B344E0048F508 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1B92A323151B345F0048F508 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		1B92A325151B348F0048F508 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		1B92A326151B348F0048F508 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		1B92A329151B34A00048F508 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		1B92A32B151B34B30048F508 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		1B92A32D151B34EA0048F508 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1B92A32E151B34EA0048F508 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1B92A32F151B34EA0048F508 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		1B92A330151B34EA0048F508 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1B92A331151B34EA0048F508 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1B92A337151B34FC0048F508 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1B92A348151B35BF0048F508 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		1B92A34B151B35E50048F508 /* map_view.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = map_view.js; sourceTree = "<group>"; };
+		1BB52271151B1ADE006BEDBF /* SCWebViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCWebViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BB52275151B1ADE006BEDBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1BB52277151B1ADE006BEDBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1BB52279151B1ADE006BEDBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1BB5227D151B1ADE006BEDBF /* SCWebViewTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCWebViewTest-Info.plist"; sourceTree = "<group>"; };
+		1BB5227F151B1ADE006BEDBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1BB52281151B1ADF006BEDBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1BB52283151B1ADF006BEDBF /* SCWebViewTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCWebViewTest-Prefix.pch"; sourceTree = "<group>"; };
+		1BB522D7151B1AFE006BEDBF /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
+		1BB523F6151B2B4C006BEDBF /* WebMapKitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebMapKitTest.m; sourceTree = "<group>"; };
+		1BB523F9151B2BF0006BEDBF /* SCAsyncTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAsyncTestCase.h; sourceTree = "<group>"; };
+		1BB523FA151B2BF0006BEDBF /* SCAsyncTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAsyncTestCase.m; sourceTree = "<group>"; };
+		1BB523FC151B2C26006BEDBF /* SCWebViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewContainer.h; sourceTree = "<group>"; };
+		1BB523FD151B2C26006BEDBF /* SCWebViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewContainer.m; sourceTree = "<group>"; };
+		1BB523FF151B2C8F006BEDBF /* SCAllMobileSDKLibs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCAllMobileSDKLibs.xcodeproj; path = ../../../lib/SCAllMobileSDKLibs/SCAllMobileSDKLibs.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BB5226E151B1ADE006BEDBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B41A86B151CA5A400566B1B /* libiconv.dylib in Frameworks */,
+				1B41A869151CA56B00566B1B /* AVFoundation.framework in Frameworks */,
+				1B41A867151CA53600566B1B /* libstdc++.dylib in Frameworks */,
+				1B92A338151B34FC0048F508 /* AudioToolbox.framework in Frameworks */,
+				1B92A332151B34EA0048F508 /* CoreLocation.framework in Frameworks */,
+				1B92A333151B34EA0048F508 /* CoreMedia.framework in Frameworks */,
+				1B92A334151B34EA0048F508 /* CoreVideo.framework in Frameworks */,
+				1B92A335151B34EA0048F508 /* MapKit.framework in Frameworks */,
+				1B92A336151B34EA0048F508 /* MessageUI.framework in Frameworks */,
+				1B92A32C151B34B30048F508 /* Twitter.framework in Frameworks */,
+				1B92A32A151B34A00048F508 /* CoreMotion.framework in Frameworks */,
+				1B92A327151B348F0048F508 /* AddressBook.framework in Frameworks */,
+				1B92A328151B348F0048F508 /* AddressBookUI.framework in Frameworks */,
+				1B92A324151B345F0048F508 /* libz.dylib in Frameworks */,
+				1B92A322151B344E0048F508 /* CFNetwork.framework in Frameworks */,
+				1B92A320151B343A0048F508 /* libxml2.dylib in Frameworks */,
+				1B92A314151B2CFD0048F508 /* libSCAllMobileSDKLibs.a in Frameworks */,
+				1BB52276151B1ADE006BEDBF /* UIKit.framework in Frameworks */,
+				1BB52278151B1ADE006BEDBF /* Foundation.framework in Frameworks */,
+				1BB5227A151B1ADE006BEDBF /* CoreGraphics.framework in Frameworks */,
+				1BB522D8151B1AFE006BEDBF /* GHUnitIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BB52266151B1ADE006BEDBF = {
+			isa = PBXGroup;
+			children = (
+				1BB5227B151B1ADE006BEDBF /* SCWebViewTest */,
+				1BB523F4151B2AAD006BEDBF /* Resources */,
+				1BB523A6151B291D006BEDBF /* Depedencies */,
+				1BB52274151B1ADE006BEDBF /* Frameworks */,
+				1BB52272151B1ADE006BEDBF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BB52272151B1ADE006BEDBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BB52271151B1ADE006BEDBF /* SCWebViewTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BB52274151B1ADE006BEDBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B41A86A151CA5A400566B1B /* libiconv.dylib */,
+				1B41A868151CA56B00566B1B /* AVFoundation.framework */,
+				1B41A866151CA53600566B1B /* libstdc++.dylib */,
+				1B92A337151B34FC0048F508 /* AudioToolbox.framework */,
+				1B92A32D151B34EA0048F508 /* CoreLocation.framework */,
+				1B92A32E151B34EA0048F508 /* CoreMedia.framework */,
+				1B92A32F151B34EA0048F508 /* CoreVideo.framework */,
+				1B92A330151B34EA0048F508 /* MapKit.framework */,
+				1B92A331151B34EA0048F508 /* MessageUI.framework */,
+				1B92A32B151B34B30048F508 /* Twitter.framework */,
+				1B92A329151B34A00048F508 /* CoreMotion.framework */,
+				1B92A325151B348F0048F508 /* AddressBook.framework */,
+				1B92A326151B348F0048F508 /* AddressBookUI.framework */,
+				1B92A323151B345F0048F508 /* libz.dylib */,
+				1B92A321151B344E0048F508 /* CFNetwork.framework */,
+				1B92A31F151B343A0048F508 /* libxml2.dylib */,
+				1BB522D7151B1AFE006BEDBF /* GHUnitIOS.framework */,
+				1BB52275151B1ADE006BEDBF /* UIKit.framework */,
+				1BB52277151B1ADE006BEDBF /* Foundation.framework */,
+				1BB52279151B1ADE006BEDBF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BB5227B151B1ADE006BEDBF /* SCWebViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				1BB523F8151B2BE4006BEDBF /* Details */,
+				1BB5227C151B1ADE006BEDBF /* Supporting Files */,
+				1BB523F6151B2B4C006BEDBF /* WebMapKitTest.m */,
+			);
+			path = SCWebViewTest;
+			sourceTree = "<group>";
+		};
+		1BB5227C151B1ADE006BEDBF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1BB5227D151B1ADE006BEDBF /* SCWebViewTest-Info.plist */,
+				1BB5227E151B1ADE006BEDBF /* InfoPlist.strings */,
+				1BB52281151B1ADF006BEDBF /* main.m */,
+				1BB52283151B1ADF006BEDBF /* SCWebViewTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BB523A6151B291D006BEDBF /* Depedencies */ = {
+			isa = PBXGroup;
+			children = (
+				1BB523FF151B2C8F006BEDBF /* SCAllMobileSDKLibs.xcodeproj */,
+			);
+			name = Depedencies;
+			sourceTree = "<group>";
+		};
+		1BB523F4151B2AAD006BEDBF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B92A34B151B35E50048F508 /* map_view.js */,
+				1B92A348151B35BF0048F508 /* test.html */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BB523F8151B2BE4006BEDBF /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1BB523F9151B2BF0006BEDBF /* SCAsyncTestCase.h */,
+				1BB523FA151B2BF0006BEDBF /* SCAsyncTestCase.m */,
+				1BB523FC151B2C26006BEDBF /* SCWebViewContainer.h */,
+				1BB523FD151B2C26006BEDBF /* SCWebViewContainer.m */,
+			);
+			path = Details;
+			sourceTree = SOURCE_ROOT;
+		};
+		1BB52400151B2C8F006BEDBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BB52404151B2C8F006BEDBF /* libSCAllMobileSDKLibs.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BB52270151B1ADE006BEDBF /* SCWebViewTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BB52292151B1ADF006BEDBF /* Build configuration list for PBXNativeTarget "SCWebViewTest" */;
+			buildPhases = (
+				1BB5226D151B1ADE006BEDBF /* Sources */,
+				1BB5226E151B1ADE006BEDBF /* Frameworks */,
+				1BB5226F151B1ADE006BEDBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B92A313151B2CF30048F508 /* PBXTargetDependency */,
+			);
+			name = SCWebViewTest;
+			productName = SCWebViewTest;
+			productReference = 1BB52271151B1ADE006BEDBF /* SCWebViewTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BB52268151B1ADE006BEDBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 1BB5226B151B1ADE006BEDBF /* Build configuration list for PBXProject "SCWebViewTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1BB52266151B1ADE006BEDBF;
+			productRefGroup = 1BB52272151B1ADE006BEDBF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1BB52400151B2C8F006BEDBF /* Products */;
+					ProjectRef = 1BB523FF151B2C8F006BEDBF /* SCAllMobileSDKLibs.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1BB52270151B1ADE006BEDBF /* SCWebViewTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1BB52404151B2C8F006BEDBF /* libSCAllMobileSDKLibs.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSCAllMobileSDKLibs.a;
+			remoteRef = 1BB52403151B2C8F006BEDBF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BB5226F151B1ADE006BEDBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BB52280151B1ADE006BEDBF /* InfoPlist.strings in Resources */,
+				1B18B9BA151B3B0B00F24944 /* map_view.js in Resources */,
+				1B18B9BB151B3B0D00F24944 /* test.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BB5226D151B1ADE006BEDBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BB52282151B1ADF006BEDBF /* main.m in Sources */,
+				1BB523F7151B2B4C006BEDBF /* WebMapKitTest.m in Sources */,
+				1BB523FB151B2BF0006BEDBF /* SCAsyncTestCase.m in Sources */,
+				1BB523FE151B2C26006BEDBF /* SCWebViewContainer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B92A313151B2CF30048F508 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SCAllMobileSDKLibs;
+			targetProxy = 1B92A312151B2CF30048F508 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1BB5227E151B1ADE006BEDBF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BB5227F151B1ADE006BEDBF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1BB52290151B1ADF006BEDBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1BB52291151B1ADF006BEDBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BB52293151B1ADF006BEDBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCWebViewTest/SCWebViewTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					../../../lib/SCUI,
+					../../../lib/SCUtils,
+					"../../../lib-third-party/JFFLibrary/lib",
+					../../../lib/SCApi,
+					../../../lib/SitecoreMobileSDK,
+					../../../lib/SCQRCodeReader,
+					../../../lib/SCWebView,
+					../../../lib/SCMap,
+				);
+				INFOPLIST_FILE = "SCWebViewTest/SCWebViewTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../deployment/SitecoreMobileSDK.framework\"";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1BB52294151B1ADF006BEDBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SCWebViewTest/SCWebViewTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					../../../lib/SCUI,
+					../../../lib/SCUtils,
+					"../../../lib-third-party/JFFLibrary/lib",
+					../../../lib/SCApi,
+					../../../lib/SitecoreMobileSDK,
+					../../../lib/SCQRCodeReader,
+					../../../lib/SCWebView,
+					../../../lib/SCMap,
+				);
+				INFOPLIST_FILE = "SCWebViewTest/SCWebViewTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../deployment/SitecoreMobileSDK.framework\"";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BB5226B151B1ADE006BEDBF /* Build configuration list for PBXProject "SCWebViewTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BB52290151B1ADF006BEDBF /* Debug */,
+				1BB52291151B1ADF006BEDBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BB52292151B1ADF006BEDBF /* Build configuration list for PBXNativeTarget "SCWebViewTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BB52293151B1ADF006BEDBF /* Debug */,
+				1BB52294151B1ADF006BEDBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1BB52268151B1ADE006BEDBF /* Project object */;
+}
