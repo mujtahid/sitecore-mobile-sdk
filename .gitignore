@@ -12,6 +12,7 @@
 
 
 /Mobile SDK/review.txt
+/Mobile SDK/withLastModified.csv
 
 /Mobile SDK/crashes
 /Mobile SDK/doc
@@ -48,6 +49,6 @@
 /Mobile SDK/lib-third-party/ObjcScopedGuard
 /Mobile SDK/lib-third-party/CPDObjective-C
 /Mobile SDK/lib-third-party/AmberFramework-lite
-
+/Mobile SDK/lib-third-party/uri-parser
 
 Mobile SDK/TODO.rtf
