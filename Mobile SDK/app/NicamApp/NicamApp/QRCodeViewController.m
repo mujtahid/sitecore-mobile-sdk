@@ -46,7 +46,7 @@
             }
             else
             {
-                 [ self.qrcodeView startCapture ];
+                [ self.qrcodeView startCapture ];
             }
         } );
     }
