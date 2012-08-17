@@ -6,10 +6,6 @@
 
 @implementation JFFAsyncOperationNetwork
 
-@synthesize params        = _params;
-@synthesize connection    = _connection;
-@synthesize resultContext = _resultContext;
-
 -(void)asyncOperationWithResultHandler:( void (^)( id, NSError* ) )handler_
                        progressHandler:( void (^)( id ) )progress_
 {
@@ -23,8 +19,6 @@
     }
 
     self.connection.shouldAcceptCertificateBlock = self.params.certificateCallback;
-
-    [ self.connection start ];
 
     __unsafe_unretained JFFAsyncOperationNetwork* self_ = self;
 
@@ -46,6 +40,8 @@
     {
         self_.resultContext = response_;
     };
+
+    [ self.connection start ];
 }
 
 -(void)cancel:( BOOL )canceled_
