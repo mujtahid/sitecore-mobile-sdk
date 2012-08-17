@@ -215,7 +215,7 @@ static JFFCancelAsyncOperation performNativeLoader( JFFPropertyExtractor* proper
 
     asyncOperation_     = [ asyncOperation_     copy ];
     didFinishOperation_ = [ didFinishOperation_ copy ];
-    factory_            = [ factory_ copy ];
+    factory_            = [ factory_            copy ];
 
     return ^JFFCancelAsyncOperation( JFFAsyncOperationProgressHandler progressCallback_
                                     , JFFCancelAsyncOperationHandler cancelCallback_
@@ -243,7 +243,7 @@ static JFFCancelAsyncOperation performNativeLoader( JFFPropertyExtractor* proper
 
         if ( nil == propertyExtractor_.delegates )
         {
-            propertyExtractor_.delegates = [ NSMutableArray arrayWithObject: callbacks_ ];
+            propertyExtractor_.delegates = [ @[ callbacks_ ] mutableCopy ];
         }
 
         if ( propertyExtractor_.cancelBlock != nil )
