@@ -120,9 +120,9 @@
     SCResponseError* result_ = [ super copyWithZone: zone_ ];
 
     result_.statusCode = self.statusCode;
-    result_->message   = [ self.message copyWithZone: zone_ ];
-    result_->type      = [ self.type    copyWithZone: zone_ ];
-    result_->method    = [ self.method  copyWithZone: zone_ ];
+    result_->message    = [ self.message copyWithZone: zone_ ];
+    result_->type       = [ self.type    copyWithZone: zone_ ];
+    result_->method     = [ self.method  copyWithZone: zone_ ];
 
     return result_;
 }
