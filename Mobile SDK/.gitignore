@@ -1,5 +1,12 @@
 .DS_Store
 .svn
+build
+DerivedData
+._*
 project.xcworkspace/
 xcuserdata/
 /deployment/
+
+app/*
+!app/NicamApp
+!app/SampleApp

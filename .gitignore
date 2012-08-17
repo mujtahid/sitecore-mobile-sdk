@@ -1,2 +1,53 @@
+/*
 
-/todo1.txt
+.git
+.svn
+.DS_Store
+._*
+
+!/Mobile SDK
+!/resources
+!/README.md
+!/license.txt
+
+
+/Mobile SDK/review.txt
+
+/Mobile SDK/crashes
+/Mobile SDK/doc
+
+
+/Mobile SDK/frameworks/ShinobiCharts.framework
+
+/Mobile SDK/test/*
+!/Mobile SDK/test/FunctionalTests
+/Mobile SDK/test/FunctionalTests/*Dashboard*
+
+
+!/Mobile SDK/test/ManualTests
+/Mobile SDK/test/ManualTests/TestCharts
+
+
+
+!/Mobile SDK/test/UnitTests/
+/Mobile SDK/test/UnitTests/SD*
+/Mobile SDK/test/UnitTests/SCApiUnitTest
+/Mobile SDK/test/UnitTests/ChartControllerTest
+
+
+/Mobile SDK/lib/SD*
+/Mobile SDK/lib/SCUIComponents
+/Mobile SDK/lib/*Dashboard*
+/Mobile SDK/lib/SCChart
+
+/Mobile SDK/lib-third-party/fmdb
+/Mobile SDK/lib-third-party/XNMaths
+/Mobile SDK/lib-third-party/SVProgressHUD
+/Mobile SDK/lib-third-party/ESLocale
+/Mobile SDK/lib-third-party/CsvToSqlite
+/Mobile SDK/lib-third-party/ObjcScopedGuard
+/Mobile SDK/lib-third-party/CPDObjective-C
+/Mobile SDK/lib-third-party/AmberFramework-lite
+
+
+Mobile SDK/TODO.rtf
