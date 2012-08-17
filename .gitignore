@@ -32,7 +32,7 @@
 
 !/Mobile SDK/test/UnitTests/
 /Mobile SDK/test/UnitTests/SD*
-/Mobile SDK/test/UnitTests/SCApiUnitTest
+!/Mobile SDK/test/UnitTests/SCApiUnitTest
 /Mobile SDK/test/UnitTests/ChartControllerTest
 
 
