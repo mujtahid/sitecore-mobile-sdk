@@ -23,7 +23,7 @@
 
     if ( self )
     {
-        _request = request_;
+        self->_request = request_;
     }
 
     return self;

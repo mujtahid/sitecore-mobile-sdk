@@ -64,9 +64,6 @@
 , language
 , lazyFieldNamesToChange;
 
-@synthesize record = _record;
-@synthesize fieldNamesToChange = _fieldNamesToChange;
-
 -(id)init
 {
     [ self doesNotRecognizeSelector: _cmd ];
@@ -102,12 +99,12 @@
 
 -(SCItem*)itemWithId:( NSString* )itemId_
 {
-    return [ _apiContext itemWithId: itemId_ ];
+    return [ self->_apiContext itemWithId: itemId_ ];
 }
 
 -(NSString*)description
 {
-    return [ NSString stringWithFormat: @"<SCItem displayName:\"%@\" template:\"%@\" hasChildren:\"%d\" path:\"%@\" >"
+    return [ [ NSString alloc ] initWithFormat: @"<SCItem displayName:\"%@\" template:\"%@\" hasChildren:\"%d\" path:\"%@\" >"
             , self.displayName
             , self.itemTemplate
             , self.hasChildren

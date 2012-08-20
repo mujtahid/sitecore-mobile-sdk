@@ -33,7 +33,7 @@ static SystemSoundID systemSoundID( void )
 {
     self = [ super init ];
 
-    _request = request_;
+    self->_request = request_;
 
     return self;
 }

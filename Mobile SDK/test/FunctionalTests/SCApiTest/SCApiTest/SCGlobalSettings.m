@@ -1,8 +1,8 @@
 #import "SCGlobalSettings.h"
 
-//NSString* const SCWebApiHostName = @"mobilesdk.sc-demo.net/-/webapi";
-NSString* const SCWebApiHostName = @"ws-alr1.dk.sitecore.net/-/webapi";
-//NSString* const SCWebApiHostName = @"ws-vlg.dk.sitecore.net/-/webapi";
+//NSString* const SCWebApiHostName = @"mobilesdk.sc-demo.net/-/item";
+NSString* const SCWebApiHostName = @"ws-alr1.dk.sitecore.net/-/item";
+//NSString* const SCWebApiHostName = @"ws-vlg.dk.sitecore.net/-/item";
 
 NSString* const SCWebApiLogin = @"extranet\\test";
 NSString* const SCWebApiPassword = @"test";

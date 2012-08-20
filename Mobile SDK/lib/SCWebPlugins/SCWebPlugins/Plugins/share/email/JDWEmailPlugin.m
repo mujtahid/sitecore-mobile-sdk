@@ -29,7 +29,7 @@
 
     if ( self )
     {
-        _request = request_;
+        self->_request = request_;
     }
 
     return self;
@@ -143,7 +143,7 @@
         }
     }
 
-    NSString* msg_ = [ NSString stringWithFormat: @"{ result: '%@' }", resultStatus_ ];
+    NSString* msg_ = [ [ NSString alloc ] initWithFormat: @"{ result: '%@' }", resultStatus_ ];
     [ self.delegate sendMessage: msg_ ];
     [ self.delegate close ];
 }

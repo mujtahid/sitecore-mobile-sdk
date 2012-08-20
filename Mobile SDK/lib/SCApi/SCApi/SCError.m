@@ -29,7 +29,7 @@
 
 -(id)init
 {
-    NSString* description_ = [ NSString stringWithFormat: @"%@", [ self class ] ];
+    NSString* description_ = [ [ NSString alloc ] initWithFormat: @"%@", [ self class ] ];
     return [ self initWithDescription: description_ ];
 }
 
@@ -73,11 +73,9 @@
 
 @implementation SCInvalidItemIdError
 
-@synthesize itemId = _itemId;
-
 -(id)initWithItemId:( NSString* )itemId_
 {
-    NSString* description_ = [ NSString stringWithFormat: @"Item id: \"%@\" has invalid format", itemId_ ];
+    NSString* description_ = [ [ NSString alloc ] initWithFormat: @"Item id: \"%@\" has invalid format", itemId_ ];
     self = [ super initWithDescription: description_ ];
     if ( self )
     {
@@ -119,10 +117,13 @@
 {
     SCResponseError* result_ = [ super copyWithZone: zone_ ];
 
-    result_.statusCode = self.statusCode;
-    result_->message    = [ self.message copyWithZone: zone_ ];
-    result_->type       = [ self.type    copyWithZone: zone_ ];
-    result_->method     = [ self.method  copyWithZone: zone_ ];
+    if ( result_ )
+    {
+        result_.statusCode = self.statusCode;
+        result_->message    = [ self.message copyWithZone: zone_ ];
+        result_->type       = [ self.type    copyWithZone: zone_ ];
+        result_->method     = [ self.method  copyWithZone: zone_ ];
+    }
 
     return result_;
 }
@@ -137,7 +138,10 @@
 {
     SCInvalidResponseFormatError* result_ = [ super copyWithZone: zone_ ];
 
-    result_->responseData = [ self.responseData copyWithZone: zone_ ];
+    if ( result_ )
+    {
+        result_->responseData = [ self.responseData copyWithZone: zone_ ];
+    }
 
     return result_;
 }

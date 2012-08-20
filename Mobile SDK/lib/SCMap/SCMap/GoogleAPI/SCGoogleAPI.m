@@ -9,7 +9,7 @@
 
 +(id)googleApiLocationParamWithCCCoordinate:( CLLocationCoordinate2D )coordinate_
 {
-    return [ NSString stringWithFormat: @"%f,%f", coordinate_.latitude, coordinate_.longitude ];
+    return [ [ NSString alloc ] initWithFormat: @"%f,%f", coordinate_.latitude, coordinate_.longitude ];
 }
 
 @end
@@ -54,7 +54,7 @@
     {
         SCTwoPointsRoute* route_ = object_;
 
-        NSString* queryString_ = [ NSString stringWithFormat: @"https://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@&sensor=true&mode=driving"
+        NSString* queryString_ = [ [ NSString alloc ] initWithFormat: @"https://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@&sensor=true&mode=driving"
                                   , [ NSString googleApiLocationParamWithCCCoordinate: route_.origin ]
                                   , [ NSString googleApiLocationParamWithCCCoordinate: route_.destination ] ];
 
@@ -75,7 +75,7 @@
         {
             if ( ![ serverData_ isKindOfClass: [ NSData class ] ] )
             {
-                NSError* error_ = [ JFFError errorWithDescription: @"ERROR: bad data from reader responce" ];
+                NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: bad data from reader responce" ];
                 [ error_ setToPointer: outError_ ];
                 return nil;
             }
@@ -91,7 +91,7 @@
 
             if ( ![ jsonDict_ isKindOfClass: [ NSDictionary class ] ] )
             {
-                NSError* error_ = [ JFFError errorWithDescription: @"ERROR: can't parse directions response from google API" ];
+                NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: can't parse directions response from google API" ];
                 [ error_ setToPointer: outError_ ];
                 return nil;
             }
@@ -99,7 +99,7 @@
             NSString* status_ = [ jsonDict_ objectForKey: @"status" ];
             if ( ![ status_ isEqualToString: @"OK" ] )
             {
-                NSError* error_ = [ JFFError errorWithDescription: @"ERROR: bad status in [directions response from google API]" ];
+                NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: bad status in [directions response from google API]" ];
                 [ error_ setToPointer: outError_ ];
                 return nil;
             }
@@ -110,7 +110,7 @@
 
             if ( ![ route_ isKindOfClass: [ NSDictionary class ] ]  )
             {
-                NSError* error_ = [ JFFError errorWithDescription: @"ERROR: bad route data in [directions response from google API]" ];
+                NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: bad route data in [directions response from google API]" ];
                 [ error_ setToPointer: outError_ ];
                 return nil;
             }
@@ -118,7 +118,7 @@
             NSDictionary* overviewPolyline_ = [ route_ objectForKey: @"overview_polyline" ];
             if ( ![ overviewPolyline_ isKindOfClass: [ NSDictionary class ] ]  )
             {
-                NSError* error_ = [ JFFError errorWithDescription: @"ERROR: bad route data in [directions response from google API]" ];
+                NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: bad route data in [directions response from google API]" ];
                 [ error_ setToPointer: outError_ ];
                 return nil;
             }
@@ -127,7 +127,7 @@
 
             if ( !codedPoints_ )
             {
-                NSError* error_ = [ JFFError errorWithDescription: @"ERROR: no information about overview_polyline->points in [directions response from google API]" ];
+                NSError* error_ = [ JFFError newErrorWithDescription: @"ERROR: no information about overview_polyline->points in [directions response from google API]" ];
                 [ error_ setToPointer: outError_ ];
                 return nil;
             }

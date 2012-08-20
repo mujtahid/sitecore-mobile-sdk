@@ -12,7 +12,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope | SCItemReaderChil
 -(void)testReadItemWithAllFields
 {
    __weak __block SCApiContext* weakApiContext_ = nil;
-   __block NSArray* products_items_ = nil;
+   __block NSArray* productsItems_ = nil;
 
    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
    {
@@ -26,7 +26,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope | SCItemReaderChil
                                                                              scope: scope_ ];
        [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
        {
-           products_items_ = items_;
+           productsItems_ = items_;
            didFinishCallback_();
        } );
    };
@@ -35,10 +35,10 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope | SCItemReaderChil
                                           selector: _cmd ];
 
    GHAssertTrue( weakApiContext_ != nil, @"OK" );
-   GHAssertTrue( products_items_ != nil, @"OK" );
-   GHAssertTrue( [ products_items_ count ] >= 1, @"OK" );
+   GHAssertTrue( productsItems_ != nil, @"OK" );
+   GHAssertTrue( [ productsItems_ count ] >= 1, @"OK" );
 
-   SCItem* product_item_ = [ products_items_ objectAtIndex: 0 ];
+   SCItem* product_item_ = [ productsItems_ objectAtIndex: 0 ];
 
    GHAssertTrue( product_item_ != nil, @"OK" );
 
@@ -63,8 +63,8 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope | SCItemReaderChil
 
    //test childs
    {
-      NSRange childrenRange = NSMakeRange( 1, [ products_items_ count ] - 1 );
-      NSArray* children_ = [ products_items_ subarrayWithRange: childrenRange ];
+      NSRange childrenRange = NSMakeRange( 1, [ productsItems_ count ] - 1 );
+      NSArray* children_ = [ productsItems_ subarrayWithRange: childrenRange ];
 
       GHAssertTrue( 4 == [ children_ count ], @"OK" );
       for ( SCItem* item_ in children_ )
@@ -79,7 +79,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope | SCItemReaderChil
 
 //by item id
 // 0(+),1(-),2(-),3(-),4(-),5(-),6(-),7(-)
--(void)testReadItemWithSomeFields
+-(void)_testReadItemWithSomeFields
 {
     __weak __block SCApiContext* apiContext_ = nil;
     __block NSArray* lenses_items_ = nil;
@@ -155,7 +155,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderParentScope | SCItemReaderChil
 
 //by absolute path
 // 0(+),1(-),2(-),3(-),4(-),5(-),6(-),7(-)
--(void)testReadItemWithNoFields
+-(void)_testReadItemWithNoFields
 {
     __weak __block SCApiContext* apiContext_ = nil;
     __block NSArray* products_items_ = nil;

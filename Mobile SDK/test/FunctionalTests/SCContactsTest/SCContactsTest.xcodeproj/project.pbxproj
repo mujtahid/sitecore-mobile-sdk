@@ -186,6 +186,8 @@
 		6568491B1472F9AD0064CDE4 /* SCWebViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCWebViewContainer.h; sourceTree = "<group>"; };
 		6568491C1472F9AD0064CDE4 /* SCWebViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCWebViewContainer.m; sourceTree = "<group>"; };
 		65684978147305460064CDE4 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		7E951C0F15E22C1300C6C2EF /* SCContactsTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SCContactsTest.entitlements; sourceTree = "<group>"; };
+		7E951C1015E22FA600C6C2EF /* SCContactsTest copy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "SCContactsTest copy.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 		25913C9F146D57910099177E = {
 			isa = PBXGroup;
 			children = (
+				7E951C1015E22FA600C6C2EF /* SCContactsTest copy.entitlements */,
 				258A14EE14E537AB00DA4DE5 /* manual tests.png */,
 				25913CB4146D57920099177E /* SCContactsTest */,
 				25913CAD146D57920099177E /* Frameworks */,
@@ -348,6 +351,7 @@
 		25913CB4146D57920099177E /* SCContactsTest */ = {
 			isa = PBXGroup;
 			children = (
+				7E951C0F15E22C1300C6C2EF /* SCContactsTest.entitlements */,
 				258CCE5814712AF200DCDE0A /* Details */,
 				258CCE5614712A3100DCDE0A /* WebViewAccountsTest.m */,
 				253CB75F1476B8FD009F70E6 /* WebViewVersionTest.m */,
@@ -590,6 +594,7 @@
 		1BAFB73F1511E8B30007A91D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SCContactsTest copy.entitlements";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../frameworks\"",
@@ -616,6 +621,7 @@
 		1BAFB7401511E8B30007A91D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SCContactsTest copy.entitlements";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../frameworks\"",
@@ -713,6 +719,7 @@
 		25913CC9146D57920099177E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SCContactsTest/SCContactsTest.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../frameworks\"",
@@ -739,6 +746,7 @@
 		25913CCA146D57920099177E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SCContactsTest/SCContactsTest.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../frameworks\"",

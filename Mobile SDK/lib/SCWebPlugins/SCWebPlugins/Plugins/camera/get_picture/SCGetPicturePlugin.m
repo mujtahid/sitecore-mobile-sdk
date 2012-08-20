@@ -130,9 +130,6 @@
 @implementation SCGetPicturePlugin
 
 @synthesize delegate;
-@synthesize imagePickerController = _imagePickerController;
-@synthesize popover               = _popover;
-@synthesize request               = _request;
 
 -(id)initWithRequest:( NSURLRequest* )request_
 {
@@ -163,7 +160,7 @@
                                                            encoding: NSUTF8StringEncoding ];
 
     NSArray* sourceTypes_ = [ NSArray cameraSourceTypes ];
-    jsCameraOptions_ = [ NSString stringWithFormat: jsCameraOptions_
+    jsCameraOptions_ = [ [ NSString alloc ] initWithFormat: jsCameraOptions_
                         , [ sourceTypes_ componentsJoinedByString: @", " ] ];
 
     return [ js_ stringByAppendingString: jsCameraOptions_ ];
@@ -172,12 +169,11 @@
 -(void)showPopoverWithController:( UIViewController* )controller_
                             view:( UIWebView* )view_
 {
-    _popover = [ [ UIPopoverController alloc ]
-                    initWithContentViewController: controller_ ];
-    _popover.delegate = self;
+    self->_popover = [ [ UIPopoverController alloc ] initWithContentViewController: controller_ ];
+    self->_popover.delegate = self;
 
-    [ _popover presentPopoverFromRect: CGRectMake( 0.f, 0.f, 400.f, 600.f )
-                            inWebView: view_ ];
+    [ self->_popover presentPopoverFromRect: CGRectMake( 0.f, 0.f, 400.f, 600.f )
+                                  inWebView: view_ ];
 }
 
 -(void)getPictureForWebView:( UIWebView* )webView_

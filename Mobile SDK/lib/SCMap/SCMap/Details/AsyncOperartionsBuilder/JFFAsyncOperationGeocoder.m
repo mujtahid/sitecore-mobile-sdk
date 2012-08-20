@@ -14,8 +14,6 @@
 
 @implementation JFFAsyncOperationGeocoderBase
 
-@synthesize geocoder = _geocoder;
-
 -(id)init
 {
     self = [ super init ];

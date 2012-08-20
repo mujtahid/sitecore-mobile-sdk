@@ -35,9 +35,6 @@
     NSString* _password;
 }
 
-@synthesize imagesCache = _imagesCache
-, credentials = _credentials;
-
 -(id)initWithHost:( NSString* )host_
             login:( NSString* )login_
          password:( NSString* )password_
@@ -46,10 +43,10 @@
 
     if ( self )
     {
-        _host        = host_;
-        _login       = login_;
-        _password    = password_;
-        _imagesCache = [ NSCache new ];
+        self->_host        = host_;
+        self->_login       = login_;
+        self->_password    = password_;
+        self->_imagesCache = [ NSCache new ];
     }
 
     return self;
@@ -101,16 +98,22 @@
                                            httpMethod:( NSString* )httpMethod_
                                               headers:( NSDictionary* )headers_
 {
-    JFFAsyncOperation credentioalsLoader_ = [ self credentioalsLoader ];
+    //JFFAsyncOperation credentioalsLoader_ = [ self credentioalsLoader ];
 
     JFFAsyncOperationBinder secondLoaderBinder_ = ^JFFAsyncOperation( SCSitecoreCredentials* credentials_ )
     {
         return scDataURLResponseLoader( url_, credentials_, httpBody_, httpMethod_, headers_ );
     };
 
-    return bindSequenceOfAsyncOperations( credentioalsLoader_
-                                         , secondLoaderBinder_
-                                         , nil );
+//    return bindSequenceOfAsyncOperations( credentioalsLoader_
+//                                         , secondLoaderBinder_
+//                                         , nil );
+    SCSitecoreCredentials* credentials_ = [ SCSitecoreCredentials new ];
+
+    credentials_.login    = self->_login;
+    credentials_.password = self->_password;
+
+    return secondLoaderBinder_( credentials_ );
 }
 
 -(JFFAsyncOperationBinder)scDataLoaderWithHttpBodyAndURL:( NSData* )httpBody_
@@ -137,8 +140,8 @@
     NSString* url_ = nil;
     if ( [ path_ length ] != 0 )
     {
-        NSString* host_ = [ [ _host pathComponents ] noThrowObjectAtIndex: 0 ];
-        url_ = [ NSString stringWithFormat: @"http://%@/~/media%@.ashx", host_, path_ ];
+        NSString* host_ = [ [ self->_host pathComponents ] noThrowObjectAtIndex: 0 ];
+        url_ = [ [ NSString alloc ] initWithFormat: @"http://%@/~/media%@.ashx", host_, path_ ];
     }
 
     JFFAsyncOperation loader_ = imageLoaderForURLString( url_, cacheLifeTime_ );
@@ -155,7 +158,7 @@
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
     {
         return [ NSURL URLWithItemsReaderRequest: request_
-                                            host: _host ];
+                                            host: self->_host ];
     };
 
     SCAsyncBinderForURL analyzerForData_ = itemsJSONResponseAnalyzerWithApiCntext( apiContext_ );
@@ -169,8 +172,8 @@
     id(^keyForURL_)(NSURL*) = ^id( NSURL* url_ )
     {
         NSString* str_ = [ url_ description ];
-        str_ = [ str_ stringByAppendingFormat: @"&login=%@"   , _login    ?: @"" ];
-        str_ = [ str_ stringByAppendingFormat: @"&password=%@", _password ?: @"" ];
+        str_ = [ str_ stringByAppendingFormat: @"&login=%@"   , self->_login    ?: @"" ];
+        str_ = [ str_ stringByAppendingFormat: @"&password=%@", self->_password ?: @"" ];
         return str_;
     };
 
@@ -186,7 +189,7 @@
                                 apiContext:( SCApiContext* )apiContext_
 {
     NSURL* url_ = [ NSURL URLToCreateItemWithRequest: createItemRequest_
-                                                host: _host ];
+                                                host: self->_host ];
 
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
     {
@@ -226,7 +229,7 @@
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
     {
         return [ NSURL URLToEditItemsWithRequest: editItemsRequest_
-                                            host: _host ];
+                                            host: self->_host ];
     };
 
     JFFAsyncOperationBinder dataLoaderForURL_ = ^JFFAsyncOperation( NSURL* url_ )
@@ -246,7 +249,7 @@
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
     {
         return [ NSURL URLToEditItemsWithRequest: removeItemsRequest_
-                                            host: _host ];
+                                            host: self->_host ];
     };
 
     JFFAsyncOperationBinder dataLoaderForURL_ = ^JFFAsyncOperation( NSURL* url_ )
@@ -279,7 +282,7 @@
     NSURL*(^urlBuilder_)(void) = ^NSURL*()
     {
         return [ NSURL URLToCreateMediaItemWithRequest: request_
-                                                  host: _host
+                                                  host: self->_host
                                             apiContext: apiContext_ ];
     };
 
@@ -331,7 +334,7 @@
 
     NSURL* url_ = [ NSURL URLToGetRenderingHTMLLoaderForRenderingId: rendereringId_
                                                            sourceId: sourceId_ 
-                                                               host: _host
+                                                               host: self->_host
                                                          apiContext: apiContext_ ];
 
     if ( !url_ )

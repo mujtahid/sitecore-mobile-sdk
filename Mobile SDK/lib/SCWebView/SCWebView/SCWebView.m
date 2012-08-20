@@ -26,9 +26,6 @@ SCWebViewWrapperDelegate
     SCLRSwipeRecognizer* _recognizer;
 }
 
-@synthesize delegate
-, cachedScalesPageToFit;
-
 @dynamic dataDetectorTypes
 , allowsInlineMediaPlayback
 , mediaPlaybackRequiresUserAction
@@ -243,13 +240,13 @@ handleMemoryWarningForElementAtIndex:( NSInteger )element_index_
         return;
     }
     
-    if ( [ delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
-        [ delegate webViewDidStartLoad: self ];
+    if ( [ _delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
+        [ _delegate webViewDidStartLoad: self ];
     
     if ( !self.webView.isLoading )
     {
-        if ( [ delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
-            [ delegate webViewDidFinishLoad: self ];
+        if ( [ _delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
+            [ _delegate webViewDidFinishLoad: self ];
     }
 }
 
@@ -428,9 +425,9 @@ navigationType:(UIWebViewNavigationType)navigationType_
     }
 
     SEL selector_ = @selector( webView:shouldStartLoadWithRequest:navigationType: );
-    if ( [ delegate respondsToSelector: selector_ ] )
+    if ( [ _delegate respondsToSelector: selector_ ] )
     {
-        return [ delegate webView: self
+        return [ _delegate webView: self
        shouldStartLoadWithRequest: request_
                    navigationType: navigationType_ ];
     }
@@ -443,8 +440,8 @@ navigationType:(UIWebViewNavigationType)navigationType_
     if ( self.webView != webView_ )
         return;
 
-    if ( [ delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
-        [ delegate webViewDidStartLoad: self ];
+    if ( [ _delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
+        [ _delegate webViewDidStartLoad: self ];
 }
 
 -(BOOL)isFirstPageWebView:( SCWebViewWrapper* )webView_
@@ -479,8 +476,8 @@ navigationType:(UIWebViewNavigationType)navigationType_
     if ( self.webView != webView_ )
         return;
 
-    if ( [ delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
-        [ delegate webViewDidFinishLoad: self ];
+    if ( [ _delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
+        [ _delegate webViewDidFinishLoad: self ];
 }
 
 -(void)webView:( SCWebViewWrapper* )webView_ didFailLoadWithError:( NSError* )error_
@@ -488,8 +485,8 @@ navigationType:(UIWebViewNavigationType)navigationType_
     if ( self.webView != webView_ )
         return;
 
-    if ( [ delegate respondsToSelector: @selector( webView:didFailLoadWithError: ) ] )
-        [ delegate webView: self didFailLoadWithError: error_ ];
+    if ( [ _delegate respondsToSelector: @selector( webView:didFailLoadWithError: ) ] )
+        [ _delegate webView: self didFailLoadWithError: error_ ];
 }
 
 +(void)setUserAgentAddition:( NSString* )userAgentAddition_

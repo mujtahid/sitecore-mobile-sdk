@@ -844,7 +844,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "17B39461-CAD3-4777-ADA1-D763565D10C3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A8BA8F71-5263-4BA3-AFFA-20ABF4F87395";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;

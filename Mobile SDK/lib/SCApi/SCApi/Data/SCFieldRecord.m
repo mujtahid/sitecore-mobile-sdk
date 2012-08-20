@@ -21,15 +21,6 @@
 
 @implementation SCFieldRecord
 
-@synthesize apiContext = _apiContext;
-@synthesize fieldId    = _fieldId;
-@synthesize name       = _name;
-@synthesize type       = _type;
-@synthesize rawValue   = _rawValue;
-@synthesize itemRecord = _itemRecord;
-@synthesize fieldRef   = _fieldRef;
-@synthesize fieldValue = _fieldValue;
-
 +(Class)fieldClassForType:( NSString* )type_
 {
     static NSDictionary* classByFieldType_ = nil;
@@ -55,14 +46,14 @@
 
 -(SCField*)field
 {
-    SCField* field_ = _fieldRef;
+    SCField* field_ = self->_fieldRef;
 
     if ( !field_ )
     {
         Class fieldClass_ = [ [ self class ] fieldClassForType: self.type ];
         field_ = [ fieldClass_ fieldWithFieldRecord: self
                                          apiContext: self.apiContext ];
-        _fieldRef = field_;
+        self->_fieldRef = field_;
     }
 
     return field_;

@@ -114,12 +114,14 @@ JFFAsyncOperation scDataURLResponseLoader( NSURL* url_
     headers_ = headers_ ?: [ NSDictionary new ];
     if ( [ credentials_.login length ] != 0 )
     {
-        NSString* encryptedPassword_ = credentials_.encryptedPassword;
+//TODO implement crypting password
+//        NSString* encryptedPassword_ = credentials_.encryptedPassword;
 
         NSDictionary* authHeaders_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
                                       credentials_.login  , @"X-Scwebapi-Username"
-                                      , encryptedPassword_, @"X-Scwebapi-Password"
-                                      , @"1", @"X-Scwebapi-Encrypted"
+                                      , credentials_.password, @"X-Scwebapi-Password"
+//                                      , encryptedPassword_, @"X-Scwebapi-Password"
+//                                      , @"1", @"X-Scwebapi-Encrypted"
                                       , nil ];
         headers_ = [ authHeaders_ dictionaryByAddingObjectsFromDictionary: headers_ ];
     }

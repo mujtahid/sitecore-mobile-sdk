@@ -4,6 +4,16 @@
 
 #import <JFFTestTools/GHAsyncTestCase+MainThreadTests.h>
 
+BOOL isRequestOk( NSURLRequest* request_ );
+
+BOOL isRequestOk( NSURLRequest* request_ )
+{
+    NSComparisonResult result_ = [ request_.URL.host compare: @"OK"
+                                                     options: NSCaseInsensitiveSearch ];
+    
+    return ( NSOrderedSame == result_ );
+}
+
 @implementation SCAsyncTestCase
 
 -(void)runTestWithSelector:( SEL )sel_
@@ -36,7 +46,7 @@
         didFinishCallback_ = [ didFinishCallback_ copy ];
         container_.testWebViewRequest = ^BOOL( NSURLRequest* request_ )
         {
-            if ( [ request_.URL.host isEqualToString: @"OK" ] )
+            if ( isRequestOk( request_ ) )
             {
                 if ( afterTestBlock_ )
                 {
@@ -46,7 +56,9 @@
             }
 
             if ( !result_ )
+            {
                 NSLog( @"fail: %@", request_.URL.host );
+            }
 
             didFinishCallback_();
 

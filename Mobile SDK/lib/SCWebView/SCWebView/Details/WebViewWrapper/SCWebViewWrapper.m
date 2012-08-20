@@ -36,10 +36,6 @@ UIWebViewDelegate
     SCWebViewDeviceEvents*  _deviceEvents;
 }
 
-@synthesize delegate;
-@synthesize activityIndicator = _activityIndicator;
-@synthesize contentRequest = _contentRequest;
-
 @dynamic scalesPageToFit;
 @dynamic request;
 
@@ -235,9 +231,9 @@ navigationType:( UIWebViewNavigationType )navigation_type_
         return YES;
     
     SEL selector_ = @selector( webView:shouldStartLoadWithRequest:navigationType: );
-    if ( [ delegate respondsToSelector: selector_ ] )
+    if ( [ self->_delegate respondsToSelector: selector_ ] )
     {
-        return [ delegate webView: self
+        return [ self->_delegate webView: self
        shouldStartLoadWithRequest: request_
                    navigationType: navigation_type_ ];
     }
@@ -247,16 +243,16 @@ navigationType:( UIWebViewNavigationType )navigation_type_
 
 -(void)webViewDidStartLoad:( UIWebView* )webView_
 {
-    if ( [ delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
-        [ delegate webViewDidStartLoad: self ];
+    if ( [ self->_delegate respondsToSelector: @selector( webViewDidStartLoad: ) ] )
+        [ self->_delegate webViewDidStartLoad: self ];
 }
 
 -(void)webViewDidFinishLoad:( UIWebView* )webView_
 {
     [ _activityIndicator stopAnimating ];
     
-    if ( [ delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
-        [ delegate webViewDidFinishLoad: self ];
+    if ( [ self->_delegate respondsToSelector: @selector( webViewDidFinishLoad: ) ] )
+        [ self->_delegate webViewDidFinishLoad: self ];
     
     [ [ self class ] enableSCJavascriptForWevView: webView_ ];
 }
@@ -266,8 +262,8 @@ didFailLoadWithError:( NSError* )error_
 {
     [ _activityIndicator stopAnimating ];
     
-    if ( [ delegate respondsToSelector: @selector( webView:didFailLoadWithError: ) ] )
-        [ delegate webView: self didFailLoadWithError: error_ ];
+    if ( [ self->_delegate respondsToSelector: @selector( webView:didFailLoadWithError: ) ] )
+        [ self->_delegate webView: self didFailLoadWithError: error_ ];
 }
 
 @end

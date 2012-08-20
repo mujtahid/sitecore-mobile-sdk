@@ -32,13 +32,6 @@
     SCRemoteApi* _api;
 }
 
-@synthesize defaultLanguage              = _defaultLanguage;
-@synthesize defaultDatabase              = _defaultDatabase;
-@synthesize defaultLifeTimeInCache       = _defaultLifeTimeInCache;
-@synthesize defaultImagesLifeTimeInCache = _defaultImagesLifeTimeInCache;
-@synthesize systemLanguages              = _systemLanguages;
-@synthesize itemsCache                   = _itemsCache;
-
 -(id)init
 {
     NSAssert( NO, @"don't call this method" );
@@ -270,17 +263,12 @@
     return bindSequenceOfAsyncOperations( loader_, cacher_, nil );
 }
 
--(JFFAsyncOperation)forceReaderWithRequest:( SCItemsReaderRequest* )request_
-{
-    JFFAsyncOperation loader_ = [ _api itemsReaderWithRequest: request_
-                                                   apiContext: self ];
-    return [ self cachedItemsPageLoader: loader_
-                                request: request_ ];
-}
-
 -(JFFAsyncOperation)itemRecordLoaderForRequest:( SCItemsReaderRequest* )request_
 {
-    return [ self forceReaderWithRequest: request_ ];
+    JFFAsyncOperation loader_ = [ self->_api itemsReaderWithRequest: request_
+                                                         apiContext: self ];
+    return [ self cachedItemsPageLoader: loader_
+                                request: request_ ];
 }
 
 static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation loader_

@@ -28,14 +28,6 @@
 
 @implementation SCQRCodeReaderView
 
-@synthesize readers;
-@synthesize delegate = _delegate;
-
-@synthesize captureSession = _captureSession;
-@synthesize prevLayer;
-@synthesize decoding;
-@synthesize captureRect = _captureRect;
-
 + (id)viewWithDelegate:(id<SCQRCodeReaderViewDelegate>)delegate_
            captureRect:(CGRect)captureRect_;
 {
@@ -51,7 +43,7 @@
 
 -(void)setup
 {
-    readers = [ [ NSSet alloc ] initWithObjects: [ QRCodeReader new ], nil ];
+    self->_readers = [ [ NSSet alloc ] initWithObjects: [ QRCodeReader new ], nil ];
 }
 
 -(void)awakeFromNib

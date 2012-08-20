@@ -2,11 +2,9 @@
 
 @implementation SCItemIdPathAndLanguage
 
-@synthesize itemIdPath, language;
-
 -(NSString*)itemIdPath
 {
-    return itemIdPath ? itemIdPath : @"";
+    return self->_itemIdPath ? self->_itemIdPath : @"";
 }
 
 -(BOOL)isEqual:( SCItemIdPathAndLanguage* )other_
@@ -25,28 +23,28 @@
     if ( self == other_ )
         return YES;
 
-    return [ itemIdPath isEqualToString: other_.itemIdPath ]
-        && [ language   isEqualToString: other_.language ];
+    return [ self.itemIdPath isEqualToString: other_.itemIdPath ]
+        && [ self.language   isEqualToString: other_.language ];
 }
 
 -(NSUInteger)hash
 {
-    return [ itemIdPath hash ];
+    return [ self.itemIdPath hash ];
 }
 
 -(id)copyWithZone:(NSZone *)zone_
 {
     SCItemIdPathAndLanguage* result_ = [ [ [ self class ] allocWithZone: zone_ ] init ];
 
-    result_->itemIdPath = [ itemIdPath copyWithZone: zone_ ];
-    result_->language   = [ language   copyWithZone: zone_ ];
+    result_->_itemIdPath = [ self->_itemIdPath copyWithZone: zone_ ];
+    result_->_language   = [ self->_language   copyWithZone: zone_ ];
 
     return result_;
 }
 
 -(NSString*)description
 {
-    return [ NSString stringWithFormat: @"<SCItemIdPathAndLanguage itemIdPath:\"%@\" language:\"%@\" >"
+    return [ [ NSString alloc ] initWithFormat: @"<SCItemIdPathAndLanguage itemIdPath:\"%@\" language:\"%@\" >"
             , self.itemIdPath
             , self.language ];
 }

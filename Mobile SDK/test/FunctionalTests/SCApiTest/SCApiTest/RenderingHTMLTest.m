@@ -40,7 +40,7 @@
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
     {
         apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
-        
+
         SCAsyncOp loader_ = [ apiContext_ renderingHTMLLoaderForRenderingWithId: @"{0DD9ED2E-DCE9-4639-B612-6A30F2D1F812}"
                                                                        sourceId: @"{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" ];
         loader_(^( id result, NSError* error_ )
@@ -64,17 +64,17 @@
 {
     __block SCApiContext* apiContext_ = nil;
     __block NSString* loaderResult_ = nil;
-    
-    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock did_finish_callback_ )
+
+    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
         apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
-        
+
         SCAsyncOp loader_ = [ apiContext_ renderingHTMLLoaderForRenderingWithId: @"{0DD9ED2E-DCE9-4639-B612-6A30F2D1F812}"
                                                                        sourceId: @"{010D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}" ];
-        loader_(^( id result, NSError* error_ )
+        loader_(^( id result_, NSError* error_ )
         {
-            loaderResult_ = result;
-            did_finish_callback_();
+            loaderResult_ = result_;
+            didFinishCallback_();
         } );
     };
     

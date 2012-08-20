@@ -24,9 +24,6 @@
     SCItemsReaderRequest* _requestTemplate;
 }
 
-@synthesize apiContext        = _apiContext;
-@synthesize itemsByPageNumber = _itemsByPageNumber;
-
 -(id)initWithApiContext:( SCApiContext* )apiContext_
                 request:( SCItemsReaderRequest* )request_
 {

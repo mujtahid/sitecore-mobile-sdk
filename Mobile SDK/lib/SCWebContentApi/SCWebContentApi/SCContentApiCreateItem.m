@@ -147,12 +147,12 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
             }
             else
             {
-                message_ = [ NSString stringWithFormat: @"{ error: 'Can not serialize the JSON object' }" ];
+                message_ = [ [ NSString alloc ] initWithFormat: @"{ error: 'Can not serialize the JSON object' }" ];
             }
         }
         else
         {
-            message_ = [ NSString stringWithFormat: @"{ error: '%@' }", [ error_ description ] ];
+            message_ = [ [ NSString alloc ] initWithFormat: @"{ error: '%@' }", [ error_ description ] ];
         }
 
         [ self.delegate sendMessage: message_ ];
@@ -176,7 +176,7 @@ static NSTimeInterval imageCachePeriod_ = 60*60*24.;
     NSString* imagePath_ = [ args_ firstValueIfExsistsForKey: @"imageUrl" ];
 
     NSString* location_  = [ args_ firstValueIfExsistsForKey: @"location" ];
-    self->_location = [ NSString stringWithFormat: @"%@/-/webapi", location_ ];
+    self->_location = [ [ NSString alloc ] initWithFormat: @"%@/-/item", location_ ];
 
     self->_login    = [ args_ firstValueIfExsistsForKey: @"login"    ];
     self->_password = [ args_ firstValueIfExsistsForKey: @"password" ];

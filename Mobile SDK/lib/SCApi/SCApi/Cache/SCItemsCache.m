@@ -92,25 +92,17 @@
 
 @implementation SCItemsCache
 
-@synthesize rootItemRecord = _rootItemRecord;
-
-@synthesize itemRecordsByPath                    = _itemRecordsByPath;
-@synthesize itemRecordsById                      = _itemRecordsById;
-@synthesize fieldsByItemIdAndLanguage            = _fieldsByItemIdAndLanguage;
-@synthesize hasAllChildrenForItemIdAndLanguage   = _hasAllChildrenForItemIdAndLanguage;
-@synthesize hasAllChildrenForItemPathAndLanguage = _hasAllChildrenForItemPathAndLanguage;
-
 -(id)init
 {
     self = [ super init ];
 
     if ( self )
     {
-        _itemRecordsByPath                    = [ NSMutableDictionary new ];
-        _itemRecordsById                      = [ NSMutableDictionary new ];
-        _fieldsByItemIdAndLanguage            = [ NSMutableDictionary new ];
-        _hasAllChildrenForItemIdAndLanguage   = [ NSMutableSet new ];
-        _hasAllChildrenForItemPathAndLanguage = [ NSMutableSet new ];
+        self->_itemRecordsByPath                    = [ NSMutableDictionary new ];
+        self->_itemRecordsById                      = [ NSMutableDictionary new ];
+        self->_fieldsByItemIdAndLanguage            = [ NSMutableDictionary new ];
+        self->_hasAllChildrenForItemIdAndLanguage   = [ NSMutableSet new ];
+        self->_hasAllChildrenForItemPathAndLanguage = [ NSMutableSet new ];
     }
 
     return self;
@@ -118,13 +110,13 @@
 
 -(SCItemRecord*)rootItemRecord
 {
-    SCItemRecord* result_ = _rootItemRecord;
+    SCItemRecord* result_ = self->_rootItemRecord;
     if ( !result_ )
     {
         result_ = [ SCItemRecord rootRecord ];
         [ self registerItemRecord: result_
                         allFields: YES ];
-        _rootItemRecord = result_;
+        self->_rootItemRecord = result_;
     }
     return result_;
 }

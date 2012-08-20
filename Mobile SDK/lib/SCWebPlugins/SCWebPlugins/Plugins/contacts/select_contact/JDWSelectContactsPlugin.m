@@ -30,14 +30,18 @@
 
 -(void)dealloc
 {
-    CFRelease( _person );
+    if ( self->_person )
+        CFRelease( self->_person );
 }
 
 -(id)initWithRequest:( NSURLRequest* )request_
 {
     self = [ super init ];
 
-    _request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }
@@ -57,16 +61,16 @@
         return;
     }
 
-    _controller = [ ABPeoplePickerNavigationController new ];
-    _controller.delegate = self;
-    _controller.peoplePickerDelegate = self;
+    self->_controller = [ ABPeoplePickerNavigationController new ];
+    self->_controller.delegate = self;
+    self->_controller.peoplePickerDelegate = self;
 
     NSArray* displayedItems = [ NSArray arrayWithObjects:
                                [ NSNumber numberWithInt: kABPersonPhoneProperty ]
                                , [ NSNumber numberWithInt: kABPersonEmailProperty    ]
                                , [ NSNumber numberWithInt: kABPersonBirthdayProperty ]
                                , nil ];
-    _controller.displayedProperties = displayedItems;
+    self->_controller.displayedProperties = displayedItems;
 
     if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone)
     {
@@ -74,10 +78,10 @@
     }
     else
     {
-        _popover = [ [ UIPopoverController alloc ] initWithContentViewController: _controller ];
-        _popover.delegate = self;
-        [ _popover presentPopoverFromRect: CGRectMake( 0.f, 0.f, 480.f, 320.f )
-                                inWebView: webView_ ];
+        self->_popover = [ [ UIPopoverController alloc ] initWithContentViewController: self->_controller ];
+        self->_popover.delegate = self;
+        [self-> _popover presentPopoverFromRect: CGRectMake( 0.f, 0.f, 480.f, 320.f )
+                                      inWebView: webView_ ];
     }
 }
 

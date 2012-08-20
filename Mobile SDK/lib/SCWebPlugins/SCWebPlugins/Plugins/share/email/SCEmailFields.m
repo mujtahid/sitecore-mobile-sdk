@@ -21,13 +21,6 @@
 
 @implementation SCEmailFields
 
-@synthesize toRecipients
-, ccRecipients
-, bccRecipients
-, subject
-, body
-, isHTML;
-
 +(id)emailFieldsWithComponents:( NSDictionary* )components_
 {
     SCEmailFields* result_ = [ self new ];
