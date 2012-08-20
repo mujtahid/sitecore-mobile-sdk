@@ -3,6 +3,9 @@
 #import "SCContact.h"
 #import "NSArray+ContactsToJSON.h"
 
+#import "SCAddressBookFactory.h"
+#import "SCAddressBook.h"
+
 #import <AddressBook/AddressBook.h>
 
 #include "contacts.js.h"
@@ -38,31 +41,62 @@
     return [ request_.URL.path isEqualToString: @"/scmobile/contacts/silent_select_contact" ];
 }
 
--(NSArray*)allAccountsWithAllFields
+-(NSArray*)allAccountsWithAllFieldsFromAddressBook:( SCAddressBook* )book_
 {
-    ABAddressBookRef addressBook_ = ABAddressBookCreate();
-
+    ABAddressBookRef addressBook_ = book_.rawBook;
     NSArray* result_ = (__bridge_transfer NSArray*)ABAddressBookCopyArrayOfAllPeople( addressBook_ );
+
 
     result_ = [ result_ map: ^id( id object_ )
     {
         ABRecordRef person_ = ( __bridge ABRecordRef )object_;
-        return [ [ SCContact alloc ] initWithPerson: person_ ];
+        return [ [ SCContact alloc ] initWithPerson: person_
+                                        addressBook: book_ ];
     } ];
-
-    CFRelease( addressBook_ );
 
     return result_;
 }
 
+
+
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
-    NSArray* contacts_ = [ self allAccountsWithAllFields ];
+    __weak JDWSilentSelectContactsPlugin* weakSelf_ = self;
+    
+    [ SCAddressBookFactory asyncAddressBookWithOnCreatedBlock:
+       ^void(SCAddressBook* book_, ABAuthorizationStatus status_, NSError* error_)
+       {
+           if ( kABAuthorizationStatusAuthorized != status_ )
+           {
+               [ weakSelf_ processAccessError: error_
+                               forAddressBook: book_
+                                       status: status_ ];
+           }
+           else
+           {
+               [ self doWorkWithAddressBook: book_ ];
+           }
+       } ];
+}
 
+-(void)processAccessError:( NSError* )error_
+           forAddressBook:( SCAddressBook* )book_
+                   status:( ABAuthorizationStatus )status_
+{
+    NSString* msg_ = [ error_ localizedDescription ];
+
+    [ self.delegate sendMessage: msg_ ];
+    [ self.delegate close ];
+}
+
+-(void)doWorkWithAddressBook:( SCAddressBook* )book_
+{
+    NSArray* contacts_ = [ self allAccountsWithAllFieldsFromAddressBook: book_ ];
+    
     NSString* msg_ = [ contacts_ scContactsToJSON ];
     msg_ = msg_ ?: @"{ error: 'Invalid Contacts JSON 2' }";
     [ self.delegate sendMessage: msg_ ];
-    [ self.delegate close ];
+    [ self.delegate close ];   
 }
 
 @end

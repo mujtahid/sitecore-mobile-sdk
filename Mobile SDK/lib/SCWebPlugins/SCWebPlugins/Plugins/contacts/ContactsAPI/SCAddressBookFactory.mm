@@ -1,6 +1,5 @@
 #import "SCAddressBookFactory.h"
 
-#import "SCAddressBookOwner.h"
 #import "SCAddressBook.h"
 
 using namespace ::Utils;

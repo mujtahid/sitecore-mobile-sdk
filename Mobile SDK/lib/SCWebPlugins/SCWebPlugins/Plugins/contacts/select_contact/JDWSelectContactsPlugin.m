@@ -1,6 +1,8 @@
 #import "SCWebPlugin.h"
 
 #import "SCContact.h"
+#import "SCAddressBook.h"
+#import "SCAddressBookFactory.h"
 
 #import "NSArray+ContactsToJSON.h"
 #import "UIPopoverController+PresentPopoverInWebView.h"
@@ -118,10 +120,42 @@
 
 -(void)selectItemAction:( id )sender_
 {
-    NSString* message_;
-    if ( _person )
+    __weak JDWSelectContactsPlugin* weakSelf_ = self;
+
+    
+    [ SCAddressBookFactory asyncAddressBookWithOnCreatedBlock:
+        ^void(SCAddressBook* book_, ABAuthorizationStatus status_, NSError* error_)
+        {
+            if ( kABAuthorizationStatusAuthorized != status_ )
+            {
+                [ weakSelf_ processAccessError: error_
+                                forAddressBook: book_
+                                        status: status_ ];
+            }
+            else
+            {
+                [ self selectItemActionWithAddressBook: book_ ];
+            }
+        } ];
+}
+
+-(void)processAccessError:( NSError* )error_
+           forAddressBook:( SCAddressBook* )book_
+                   status:( ABAuthorizationStatus )status_
+{
+    NSString* msg_ = [ error_ localizedDescription ];
+    
+    [ self.delegate sendMessage: msg_ ];
+    [ self.delegate close ];
+}
+
+-(void)selectItemActionWithAddressBook:( SCAddressBook* )book_
+{
+    NSString* message_ = nil;
+    if ( self->_person )
     {
-        SCContact* contact_ = [ [ SCContact alloc ] initWithPerson: _person ];
+        SCContact* contact_ = [ [ SCContact alloc ] initWithPerson: _person
+                                                       addressBook: book_ ];
         NSArray* contacts_ = [ NSArray arrayWithObject: contact_ ];
         message_ = [ contacts_ scContactsToJSON ];
         message_ = message_ ?: @"{ error: 'Invalid Contacts JSON 1' }";
@@ -130,7 +164,7 @@
     {
         message_ = @"{ error: 'canceled' }";
     }
-
+    
     [ self hideControllers ];
     [ self onStopWithMessage: message_ ];
 }
