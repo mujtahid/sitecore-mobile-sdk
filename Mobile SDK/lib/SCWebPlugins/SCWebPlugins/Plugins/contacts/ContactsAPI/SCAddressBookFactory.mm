@@ -8,15 +8,17 @@ using namespace ::Utils;
 
 +(void)asyncAddressBookWithOnCreatedBlock:( SCAddressBookOnCreated )callback_
 {
+#ifdef kCFCoreFoundationVersionNumber_iOS_5_1
     if ( kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber_iOS_5_1 )
     {
+#endif
         [ self asyncLegacyAddressBookWithOnCreatedBlock: callback_ ];
         return;
+#ifdef kCFCoreFoundationVersionNumber_iOS_5_1
     }
-
     
     CFErrorRef error_ = NULL;
-    ABAddressBookRef result_ = ::ABAddressBookCreateWithOptions( 0, &error_ );
+    ABAddressBookRef result_ = ABAddressBookCreateWithOptions( 0, &error_ );
     SCAddressBook* bookWrapper_ = [ [ SCAddressBook alloc ] initWithRawBook: result_ ];
     
     if ( NULL != error_ )
@@ -34,7 +36,8 @@ using namespace ::Utils;
             callback_( bookWrapper_, ::ABAddressBookGetAuthorizationStatus(), retError_ );
         };
 
-    ::ABAddressBookRequestAccessWithCompletion( result_, onAddressBookAccess_ );
+    ABAddressBookRequestAccessWithCompletion( result_, onAddressBookAccess_ );
+#endif
 }
 
 
