@@ -1,5 +1,6 @@
 #import "SCAddressBookFactory.h"
 
+#import "SCAddressBookOwner.h"
 #import "SCAddressBook.h"
 
 using namespace ::Utils;
@@ -46,5 +47,41 @@ using namespace ::Utils;
 
     callback_( bookWrapper_, kABAuthorizationStatusAuthorized, nil );
 }
+
++(NSString*)bookStatusToString:( ABAuthorizationStatus) status_
+{
+    static NSArray* const errors_ =
+    @[
+        @"kABAuthorizationStatusNotDetermined",
+        @"kABAuthorizationStatusRestricted",
+        @"kABAuthorizationStatusDenied",
+        @"kABAuthorizationStatusAuthorized"
+    ];
+
+    if ( status_ > kABAuthorizationStatusAuthorized )
+    {
+        return nil;
+    }
+
+    return errors_[ status_ ];
+}
+
++(void)asyncAddressBookWithSuccessBlock:( SCAddressBookSuccessCallback )onSuccess_
+                          errorCallback:( SCAddressBookErrorCallback )onFailure_;
+{
+    [ self asyncAddressBookWithOnCreatedBlock:
+     ^void(SCAddressBook* book_, ABAuthorizationStatus status_, NSError* error_)
+     {
+         if ( kABAuthorizationStatusAuthorized != status_ )
+         {
+             onFailure_( status_, error_ );
+         }
+         else
+         {
+             onSuccess_( book_ );
+         }
+     } ];
+}
+
 
 @end
