@@ -9,6 +9,8 @@
 
 #import "NSArray+kABMultiValue.h"
 
+
+#import "SCAddressBook.h"
 #import <AddressBook/AddressBook.h>
 
 static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
@@ -38,6 +40,7 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
 @implementation SCContact
 {
     NSMutableDictionary* _fieldByName;
+    SCAddressBook* _addressBookWrapper;
 }
 
 @synthesize contactInternalId = _contactInternalId;
@@ -132,13 +135,16 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
 }
 
 -(id)initWithPerson:( ABRecordRef )person_
+        addressBook:( SCAddressBook* )addressBook_
 {
     self = [ super init ];
 
     if ( self )
     {
         NSParameterAssert( person_ );
-
+        NSParameterAssert( nil != addressBook_ );
+        self->_addressBookWrapper = addressBook_;
+        
         [ self initializeDynamicFields ];
 
         _contactInternalId = ABRecordGetRecordID( person_ );
@@ -155,11 +161,16 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
 }
 
 -(id)initWithArguments:( NSDictionary* )args_
+           addressBook:( SCAddressBook* )addressBook_
 {
     self = [ super init ];
 
+    NSParameterAssert( nil != addressBook_ );
+    
     if ( self )
     {
+        self->_addressBookWrapper = addressBook_;
+        
         [ self initializeDynamicFields ];
 
         _contactInternalId = [ [ args_ firstValueIfExsistsForKey: @"contactInternalId" ] longLongValue ];
@@ -176,13 +187,10 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
     return self;
 }
 
+
 -(ABAddressBookRef)addressBook
 {
-    if ( !_addressBook )
-    {
-        _addressBook = ABAddressBookCreate();
-    }
-    return _addressBook;
+    return self->_addressBookWrapper.rawBook;
 }
 
 -(ABRecordRef)person
