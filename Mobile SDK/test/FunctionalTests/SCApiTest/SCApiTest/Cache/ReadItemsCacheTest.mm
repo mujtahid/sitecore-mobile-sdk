@@ -51,7 +51,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
 
@@ -82,6 +84,7 @@ int children_count = 3;
     GHAssertTrue( product_item_ != nil, @"OK" );
     GHAssertTrue( [ product_item_.displayName isEqualToString: item_display_name ], @"OK" );
     GHAssertTrue( product_item_.allFieldsByName != nil, @"OK" );
+    NSLog( @"[ product_item_.allFieldsByName count ]: %d", [ product_item_.allFieldsByName count ]);
     GHAssertTrue( SCNormalLensesAllFieldsCount == [ product_item_.allFieldsByName count ], @"OK" );
     GHAssertTrue( [ product_item_.allFieldsByName count ] == [ product_item_.readFieldsByName count ], @"OK" );
 
@@ -98,7 +101,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* itemId_ = item_id;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", @"Image", nil ];
@@ -147,7 +152,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
         NSSet* fieldsNames_ = [ NSSet new ];
@@ -194,7 +201,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
 
@@ -237,7 +246,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* itemId_   = item_id;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", @"Image", nil ];
@@ -284,7 +295,9 @@ int children_count = 3;
 
    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
    {
-      apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+       apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                              login: SCWebApiAdminLogin
+                                           password: SCWebApiAdminPassword];
 
       NSString* path_ = item_full_path;
       NSSet* fieldsNames_ = [ NSSet new ];
@@ -328,7 +341,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
 
@@ -376,7 +391,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* itemId_ = item_id;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", @"Image", nil ];
@@ -425,7 +442,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
         NSSet* fieldsNames_ = [ NSSet new ];
@@ -474,7 +493,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
 
@@ -534,7 +555,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* itemId_   = item_id;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", @"Image", nil ];
@@ -601,7 +624,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
         NSSet* fieldsNames_ = [ NSSet new ];
@@ -662,7 +687,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
 
@@ -741,7 +768,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* itemId_ = item_id;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", @"Image", nil ];
@@ -816,7 +845,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
         NSSet* fieldsNames_ = [ NSSet new ];
@@ -888,7 +919,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
 
@@ -959,7 +992,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* itemId_ = item_id;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", @"Image", nil ];
@@ -1028,7 +1063,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
         NSSet* fieldsNames_ = [ NSSet new ];
@@ -1096,7 +1133,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
 
@@ -1172,7 +1211,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* itemId_ = item_id;
         NSSet* fieldsNames_ = [ NSSet setWithObjects: @"Title", @"Image", nil ];
@@ -1252,7 +1293,9 @@ int children_count = 3;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                               login: SCWebApiAdminLogin
+                                            password: SCWebApiAdminPassword];
 
         NSString* path_ = item_full_path;
         NSSet* fieldsNames_ = [ NSSet new ];

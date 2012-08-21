@@ -23,13 +23,13 @@
     if ( self == other_ )
         return YES;
 
-    return [ self.itemIdPath isEqualToString: other_.itemIdPath ]
-        && [ self.language   isEqualToString: other_.language ];
+    return [ self->_itemIdPath isEqualToString: other_->_itemIdPath ]
+        && [ self->_language   isEqualToString: other_->_language ];
 }
 
 -(NSUInteger)hash
 {
-    return [ self.itemIdPath hash ];
+    return [ self->_itemIdPath hash ];
 }
 
 -(id)copyWithZone:(NSZone *)zone_

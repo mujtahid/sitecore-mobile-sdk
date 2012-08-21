@@ -42,7 +42,7 @@
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
-    NSArray* components_ = [ [ self.request.URL queryComponents ] objectForKey: @"bt" ];
+    NSArray* components_ = [ self.request.URL queryComponents ][ @"bt" ];
     NSUInteger index_ = [ [ components_ noThrowObjectAtIndex: 0 ] integerValue ];
 
     [ self hideActiveAlertWithIndex: index_ ];

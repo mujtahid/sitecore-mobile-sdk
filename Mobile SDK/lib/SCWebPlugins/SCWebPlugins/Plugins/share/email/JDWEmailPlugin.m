@@ -13,6 +13,8 @@
     , MFMailComposeViewControllerDelegate
     >
 
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JDWEmailPlugin
@@ -81,19 +83,19 @@
 
 -(void)hideControllers
 {
-    [ _emailController dismissViewControllerAnimated: NO
-                                          completion: nil ];
+    [ self->_emailController dismissViewControllerAnimated: NO
+                                                completion: nil ];
 
     JFFScheduledBlock actionBlock_ = ^( JFFCancelScheduledBlock cancel_ )
     {
-        _emailController = nil;
+        self->_emailController = nil;
     };
     [ [ JFFScheduler sharedByThreadScheduler ] addBlock: actionBlock_ duration: 0.2 ];
 }
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
-    NSDictionary* components_ = [ _request.URL queryComponents ];
+    NSDictionary* components_ = [ self->_request.URL queryComponents ];
     SCEmailFields* fields_ = [ SCEmailFields emailFieldsWithComponents: components_ ];
 
     [ self sendEmail: fields_ webView: webView_ ];

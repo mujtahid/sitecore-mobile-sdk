@@ -10,8 +10,12 @@ NSString* const SCWebApiPassword = @"test";
 NSString* const SCWebApiAdminLogin = @"sitecore\\admin";
 NSString* const SCWebApiAdminPassword = @"b";
 
-NSUInteger SCProductsAllFieldsCount = 3;
-NSUInteger SCNormalLensesAllFieldsCount = 7;
+NSString* const SCWebApiCreatorLogin = @"sitecore\\creator";
+NSString* const SCWebApiCreatorPassword = @"creator";
+
+NSUInteger SCProductsAllFieldsCount = 4;
+NSUInteger SCNormalLensesAllFieldsCount = 10;
+NSUInteger SCLensesAllFieldsCount = 3;
 NSUInteger SCCommunityAllFieldsCount = 8;
 NSUInteger SCCommunityChildrenCount = 4;
 

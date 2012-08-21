@@ -90,7 +90,9 @@
     "/child::*[@@templatename!='Product Group' and @@templatename!='RSSTwitterReader']";
     request_.requestType = SCItemReaderRequestQuery;
     request_.fieldNames = [ NSSet setWithObject: @"Image" ];
-    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi" ];
+    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"
+                                                      login: @"sitecore\\admin"
+                                                   password: @"b" ];
     firstController_.itemsReader = [ context_ itemsReaderWithRequest: request_ ];
 
     controller_.title = @"Products";
@@ -145,7 +147,9 @@
     NSString* titleFieldName_ = @"Menu title";
     NSString* iconFieldName_  = @"Tab Icon";
 
-    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi" ];
+    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"
+                                                      login: @"sitecore\\admin"
+                                                   password: @"b"];
     NSSet* fieldsNames_ = [ NSSet setWithObjects: titleFieldName_, iconFieldName_, nil ];
     NSString* itemPath_ = @"/sitecore/content/nicam";
 

@@ -213,9 +213,7 @@
                                                           url: url_ ];
 
     NSString* httpMethod_  = @"PUT";
-    NSDictionary* headers_ = [ [ NSDictionary alloc ] initWithObjectsAndKeys:
-                              @"application/x-www-form-urlencoded", @"Content-Type"
-                              , nil ];
+    NSDictionary* headers_ = @{ @"Content-Type" : @"application/x-www-form-urlencoded" };
 
     return [ self authedApiResponseDataLoaderForURL: url_
                                            httpBody: httpBody_

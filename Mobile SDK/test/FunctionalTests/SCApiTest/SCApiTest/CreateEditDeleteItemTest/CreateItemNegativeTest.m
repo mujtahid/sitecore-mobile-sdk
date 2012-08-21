@@ -269,8 +269,8 @@ static NSString* web_path_ = @"/sitecore/layout/Layouts/Test Data/Negative Tests
     __block SCItem* item_ = nil;
     __block NSError* response_error_ = nil;
     apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName 
-                                           login: @"creator"
-                                        password: @"creator" ];
+                                           login: SCWebApiCreatorLogin
+                                        password: SCWebApiCreatorPassword ];
 
     apiContext_.defaultDatabase = @"web";
 

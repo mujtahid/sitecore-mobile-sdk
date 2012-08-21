@@ -10,7 +10,9 @@
     __block BOOL testPassed = NO;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        SCApiContext* context = [ SCApiContext contextWithHost: SCWebApiHostName
+                                                         login: SCWebApiAdminLogin
+                                                      password: SCWebApiAdminPassword];
         
         SCItemsReaderRequest* request = [ SCItemsReaderRequest new ];
         request.request = @"/sitecore/content/Nicam";
@@ -56,16 +58,18 @@
     NSAssert( testPassed, @"wasLoadImmediately should be YES here" );
 }
 
-/*-(void)testReadItemsIgnoreCache
+-(void)testReadItemsIgnoreCache
 {
     __block BOOL testPassed = NO;
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        SCApiContext* context = [ SCApiContext contextWithHost: SCWebApiHostName ];
+        SCApiContext* context = [ SCApiContext contextWithHost: SCWebApiHostName
+                                                         login: SCWebApiAdminLogin
+                                                      password: SCWebApiAdminPassword];
         
         SCItemsReaderRequest* request = [ SCItemsReaderRequest new ];
         request.request = @"/sitecore/content/Nicam/child::*";
-        request.requestType = SCItemReaderRequestItemPath;
+        request.requestType = SCItemReaderRequestQuery;
         request.fieldNames  = [ NSSet new ];
         request.flags = SCItemReaderRequestIngnoreCache;
         
@@ -83,16 +87,16 @@
             [ context itemsReaderWithRequest: request ]( ^( NSArray* result, NSError* error )
             {
                 wasLoadImmediately = ( previousCount == [ result count ] );
-            } );
 
-            //Check that the childrenReader block's handler was already called with a result
-            testPassed = !wasLoadImmediately;
-            didFinishCallback_();
+            } );
+                //Check that the childrenReader block's handler was already called with a result
+                testPassed = !wasLoadImmediately;
+                didFinishCallback_();
         } );
     };
     [ self performAsyncRequestOnMainThreadWithBlock: block_
                                            selector: _cmd ];
     NSAssert( testPassed, @"wasLoadImmediately should be NO here" );
-}*/
+}
 
 @end

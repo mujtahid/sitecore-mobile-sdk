@@ -32,7 +32,7 @@ JFFAsyncOperation scSmartDataLoaderWithCache( NSURL*(^urlBuilder_)(void)
                                     , JFFCancelAsyncOperationHandler cancelCallback_
                                     , JFFDidFinishAsyncOperationHandler doneCallback_ )
     {
-        //NSLog( @"start load data with url: %@", urlBuilder_() );
+        NSLog( @"start load data with url: %@", urlBuilder_() );
 
         JFFSmartUrlDataLoaderFields* args_ = [ JFFSmartUrlDataLoaderFields new ];
         args_.urlBuilder        = urlBuilder_;

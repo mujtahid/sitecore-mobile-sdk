@@ -758,7 +758,7 @@ function testFindContactWithAddresses( street1, city1, state1, zip1, country1 )
                         && contact.addresses[0].zip == zip1
                         && contact.addresses.length == 2 
                         && contact.contactInternalId > 0 )
-                    { 
+                    {
                         scmobile.console.log( 'Contact with two addresses was found' );
                         resultCallback( "OK" );
                     }

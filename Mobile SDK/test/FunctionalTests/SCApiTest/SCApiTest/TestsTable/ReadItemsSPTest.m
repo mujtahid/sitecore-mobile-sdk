@@ -28,13 +28,13 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
             didFinishCallback_();
             return;
         }
+        apiContext_ = local_session_;
+
         [ local_session_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             products_items_ = items_;
             didFinishCallback_();
         } );
-
-        apiContext_ = local_session_;
     };
 
     [ self performAsyncRequestOnMainThreadWithBlock: block_
@@ -60,7 +60,8 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
         GHAssertTrue( product_item_.readChildren != nil, @"OK" );
         GHAssertTrue( [ product_item_.readChildren count ] == 1, @"OK" );
         GHAssertTrue( product_item_.allFieldsByName != nil, @"OK" );
-        GHAssertTrue( SCProductsAllFieldsCount <= [ product_item_.readFieldsByName count ], @"OK" );
+        NSLog(@"[ product_item_.readFieldsByName count ]: %d", [ product_item_.readFieldsByName count ]);
+        GHAssertTrue( SCProductsAllFieldsCount == [ product_item_.readFieldsByName count ], @"OK" );
         GHAssertTrue( [ product_item_.allFieldsByName count ] == [ product_item_.readFieldsByName count ], @"OK" );
     }
 
@@ -78,8 +79,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
         GHAssertTrue( lenses_item_.allFieldsByName != nil, @"OK" );
         
         NSLog(@"Count: %d", [ lenses_item_.readFieldsByName count ]);
-        NSLog(@"Count: %d", [ product_item_.allFieldsByName count ]);
-        GHAssertTrue( SCNormalLensesAllFieldsCount == [ lenses_item_.readFieldsByName count ], @"OK" );
+        GHAssertTrue( SCLensesAllFieldsCount == [ lenses_item_.readFieldsByName count ], @"OK" );
         GHAssertTrue( [ lenses_item_.allFieldsByName count ] == [ lenses_item_.readFieldsByName count ], @"OK" );
     }
 }
@@ -106,13 +106,13 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
             didFinishCallback_();
             return;
         }
+        apiContext_ = local_session_;
+
         [ local_session_ itemsReaderWithRequest: request_ ]( ^( NSArray* items_, NSError* error_ )
         {
             lenses_items_ = items_;
             didFinishCallback_();
         } );
-
-        apiContext_ = local_session_;
     };
 
     [ self performAsyncRequestOnMainThreadWithBlock: block_
@@ -210,7 +210,8 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope | SCItemReaderParent
         GHAssertTrue( product_item_.readChildren != nil, @"OK" );
         GHAssertTrue( [ product_item_.readChildren count ] == 1, @"OK" );
         GHAssertTrue( product_item_.allChildren == nil, @"OK" );
-
+        NSLog( @"product_item_.allFieldsByName: %@", product_item_.allFieldsByName );
+        NSLog( @"[ product_item_.readFieldsByName count ]: %d", [ product_item_.readFieldsByName count ] );
         GHAssertTrue( product_item_.allFieldsByName == nil, @"OK" );
         GHAssertTrue( [ product_item_.readFieldsByName count ] == 0, @"OK" );
    }

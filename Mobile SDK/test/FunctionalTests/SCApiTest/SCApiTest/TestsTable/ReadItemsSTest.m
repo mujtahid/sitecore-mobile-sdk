@@ -18,7 +18,7 @@ typedef SCAsyncOp (^SCTestedReader)( SCApiContext* itemReader_
     __block NSArray* products_items_ = nil;
     __block SCItem* product_item_ = nil;
 
-    __block BOOL called_instantly_ = NO;
+    __block BOOL calledInstantly_ = NO;
 
     testedReader_ = [ testedReader_ copy ];
 
@@ -37,7 +37,7 @@ typedef SCAsyncOp (^SCTestedReader)( SCApiContext* itemReader_
             didFinishCallback_();
         } );
 
-        called_instantly_ = was_called_;
+        calledInstantly_ = was_called_;
     };
 
     void (^resultTest_)(void) = ^void( void )
@@ -71,7 +71,7 @@ typedef SCAsyncOp (^SCTestedReader)( SCApiContext* itemReader_
         [ self performAsyncRequestOnMainThreadWithBlock: block_
                                                selector: selector_ ];
 
-        GHAssertTrue( called_instantly_, @"OK" );
+        GHAssertTrue( calledInstantly_, @"OK" );
         resultTest_();
     }
 }

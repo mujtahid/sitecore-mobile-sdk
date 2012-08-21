@@ -82,7 +82,7 @@
         }
         if ( !result_ )
         {
-            result_ = [ self objectAtIndex: 0 ];
+            result_ = self[ 0 ];
         }
     }
     return result_;

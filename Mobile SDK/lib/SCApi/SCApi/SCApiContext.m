@@ -295,8 +295,8 @@ static JFFAsyncOperation validatedItemsPageLoaderWithFields( JFFAsyncOperation l
 {
     request_ = ( SCCreateItemRequest* )[ request_ itemsReaderRequestWithApiContext: self ];
 
-    JFFAsyncOperation loader_ = [ _api itemCreatorWithRequest: request_
-                                                   apiContext: self ];
+    JFFAsyncOperation loader_ = [ self->_api itemCreatorWithRequest: request_
+                                                         apiContext: self ];
     loader_ = [ self cachedItemsPageLoader: loader_
                                    request: request_ ];
 

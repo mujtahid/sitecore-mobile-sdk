@@ -166,8 +166,8 @@ static NSString* web_path_ = @"/sitecore/layout/Layouts/Test Data/Create Edit De
     __block NSDictionary* read_fields_ = nil;
 
     apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName 
-                                           login: @"creator"
-                                        password: @"creator" ];
+                                           login: SCWebApiCreatorLogin
+                                        password: SCWebApiCreatorPassword ];
     
     apiContext_.defaultDatabase = @"web";
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
@@ -240,8 +240,8 @@ static NSString* web_path_ = @"/sitecore/layout/Layouts/Test Data/Create Edit De
     __block NSDictionary* read_fields_ = nil;
 
     apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName 
-                                           login: @"sitecore\\creator"
-                                        password: @"creator" ];
+                                           login: SCWebApiCreatorLogin
+                                        password: SCWebApiCreatorPassword ];
 
     apiContext_.defaultDatabase = @"web";
 

@@ -8,6 +8,9 @@
 
 //STODO move to SCMap project
 @interface SCMapViewAddressesPlugin : NSObject < SCWebPlugin >
+
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation SCMapViewAddressesPlugin

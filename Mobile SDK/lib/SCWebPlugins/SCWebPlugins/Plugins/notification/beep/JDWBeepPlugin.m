@@ -20,6 +20,9 @@ static SystemSoundID systemSoundID( void )
 }
 
 @interface JDWBeepPlugin : NSObject < SCWebPlugin >
+
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JDWBeepPlugin

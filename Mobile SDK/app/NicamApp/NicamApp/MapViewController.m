@@ -14,7 +14,9 @@
     mapView.regionRadius = 36000;
     mapView.drawRouteToNearestAddress = true;
     
-    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/webapi" ];
+    SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"
+                                                      login: @"sitecore\\admin"
+                                                   password: @"b"];
     NSString* query_ = @"/sitecore/content/Mobile SDK Datasource/descendant::*[@@templatename='Mobile Address']";
     //
     [ mapView addItemsAnnotationsForQuery: query_
