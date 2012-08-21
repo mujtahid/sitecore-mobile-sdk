@@ -201,9 +201,6 @@ function testRemoveContacts( contacts )
     var contact_count_ = contacts.length;
     var index_ = 0;
     scmobile.console.log( '[BEGIN] testRemoveContacts: ' + contact_count_ );
-//    contacts.forEach(
-//        function( contact )
-//        {
             var onSuccessGl_;
             var onErrorGl_;
             var onSuccess = function( contacts )
@@ -247,8 +244,6 @@ function testRemoveContacts( contacts )
         
             contacts[index_].remove( onSuccessGl_, onErrorGl_ );
             scmobile.console.log( '[END] testRemoveContacts: ' + contact_count_ );
-//        }
-//    );
 };
 
 function testFindAllAndRemoveContacts()
