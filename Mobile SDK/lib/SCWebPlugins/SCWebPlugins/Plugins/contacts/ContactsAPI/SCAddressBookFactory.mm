@@ -8,6 +8,8 @@ using namespace ::Utils;
 
 +(void)asyncAddressBookWithOnCreatedBlock:( SCAddressBookOnCreated )callback_
 {
+    NSParameterAssert( nil != callback_ );
+    
 #ifdef kCFCoreFoundationVersionNumber_iOS_5_1
     if ( kCFCoreFoundationVersionNumber <= kCFCoreFoundationVersionNumber_iOS_5_1 )
     {
@@ -44,6 +46,8 @@ using namespace ::Utils;
 
 +(void)asyncLegacyAddressBookWithOnCreatedBlock:( SCAddressBookOnCreated )callback_
 {
+    NSParameterAssert( nil != callback_ );
+
     ABAddressBookRef result_ = ::ABAddressBookCreate();
     SCAddressBook* bookWrapper_ = [ [ SCAddressBook alloc ] initWithRawBook: result_ ];
 
@@ -69,8 +73,11 @@ using namespace ::Utils;
 }
 
 +(void)asyncAddressBookWithSuccessBlock:( SCAddressBookSuccessCallback )onSuccess_
-                          errorCallback:( SCAddressBookErrorCallback )onFailure_;
+                          errorCallback:( SCAddressBookErrorCallback )onFailure_
 {
+    NSParameterAssert( nil != onSuccess_ );
+    NSParameterAssert( nil != onFailure_ );
+    
     [ self asyncAddressBookWithOnCreatedBlock:
      ^void(SCAddressBook* book_, ABAuthorizationStatus status_, NSError* error_)
      {
