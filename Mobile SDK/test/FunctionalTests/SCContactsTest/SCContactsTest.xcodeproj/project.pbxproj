@@ -590,7 +590,6 @@
 		1BAFB73F1511E8B30007A91D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "SCContactsTest copy.entitlements";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../frameworks\"",
@@ -617,7 +616,6 @@
 		1BAFB7401511E8B30007A91D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "SCContactsTest copy.entitlements";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../frameworks\"",
@@ -715,7 +713,6 @@
 		25913CC9146D57920099177E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SCContactsTest/SCContactsTest.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../frameworks\"",
@@ -742,7 +739,6 @@
 		25913CCA146D57920099177E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = SCContactsTest/SCContactsTest.entitlements;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../frameworks\"",
