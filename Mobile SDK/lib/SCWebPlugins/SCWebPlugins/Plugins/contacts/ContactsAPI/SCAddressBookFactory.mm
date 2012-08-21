@@ -21,7 +21,8 @@ using namespace ::Utils;
     
     CFErrorRef error_ = NULL;
     ABAddressBookRef result_ = ABAddressBookCreateWithOptions( 0, &error_ );
-    SCAddressBook* bookWrapper_ = [ [ SCAddressBook alloc ] initWithRawBook: result_ ];
+    ObjcScopedGuard rawBookGuard_( ^() { CFRelease( result_ ); } );
+
     
     if ( NULL != error_ )
     {
@@ -30,6 +31,7 @@ using namespace ::Utils;
     }
     
 
+    SCAddressBook* bookWrapper_ = [ [ SCAddressBook alloc ] initWithRawBook: result_ ];
     ABAddressBookRequestAccessCompletionHandler onAddressBookAccess_ =
         ^( bool blockGranted_, CFErrorRef blockError_ )
         {
@@ -38,6 +40,7 @@ using namespace ::Utils;
             callback_( bookWrapper_, ::ABAddressBookGetAuthorizationStatus(), retError_ );
         };
 
+    rawBookGuard_.Release();
     ABAddressBookRequestAccessWithCompletion( result_, onAddressBookAccess_ );
 #endif
 }
