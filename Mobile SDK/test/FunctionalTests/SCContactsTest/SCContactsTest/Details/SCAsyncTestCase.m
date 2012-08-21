@@ -64,6 +64,8 @@ BOOL isRequestOk( NSURLRequest* request_ )
 
             return YES;
         };
+        
+        [ container_ runJavascript ];
     };
 
     [ self performAsyncRequestOnMainThreadWithBlock: block_

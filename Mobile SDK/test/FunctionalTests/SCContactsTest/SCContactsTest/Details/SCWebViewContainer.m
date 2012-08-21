@@ -26,28 +26,31 @@
 
     if ( self )
     {
-        _webView = [ SCWebView new ];
-        [ _webView.ownerships addObject: self ];
-        _webView.delegate = self;
+        self->_webView = [ SCWebView new ];
+        [ self->_webView.ownerships addObject: self ];
+       self-> _webView.delegate = self;
 
-        [ _webView loadURLWithString: @"http://ws-alr1.dk.sitecore.net/mobilesdk-test-path" ];
+        self->_JSToTest = JSToTest_;
 
-        _JSToTest = JSToTest_;
-
-        _javascript = [ NSString stringWithContentsOfFile: path_
-                                                 encoding: NSUTF8StringEncoding
-                                                    error: nil ];
+        self->_javascript = [ NSString stringWithContentsOfFile: path_
+                                                       encoding: NSUTF8StringEncoding
+                                                          error: nil ];
     }
 
     return self;
+}
+
+-(void)runJavascript
+{
+    [ self->_webView loadURLWithString: @"http://ws-alr1.dk.sitecore.net/mobilesdk-test-path" ];
 }
 
 #pragma mark SCWebViewDelegate
 
 -(void)webViewDidFinishLoad:( SCWebView* )webView_
 {
-    [ _webView stringByEvaluatingJavaScriptFromString: _javascript ];
-    [ webView_ stringByEvaluatingJavaScriptFromString: _JSToTest ];
+    [ _webView stringByEvaluatingJavaScriptFromString: self->_javascript ];
+    [ webView_ stringByEvaluatingJavaScriptFromString: self->_JSToTest ];
 }
 
 - (BOOL)webView:(SCWebView *)webView
@@ -55,15 +58,19 @@ shouldStartLoadWithRequest:( NSURLRequest* )request_
  navigationType:(UIWebViewNavigationType)navigationType
 {
     if ( [ request_ isTestDomain ] )
+    {
         return YES;
+    }
+    else if ( [ request_ isUrlMeaningful ] )
+    {
+        return YES;
+    }
 
-    if ( request_.URL == nil
-        || [ [ request_.URL absoluteString ] isEqualToString: @"about:blank" ] )
-        return YES;
 
     if ( self->_testWebViewRequest( request_ ) )
-        [ _webView.ownerships removeObject: self ];
-
+    {
+        [ self->_webView.ownerships removeObject: self ];
+    }
     return NO;
 }
 

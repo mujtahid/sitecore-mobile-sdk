@@ -10,4 +10,18 @@
     return pathOk_;
 }
 
+-(BOOL)isUrlMeaningful
+{
+    if ( nil == self.URL )
+    {
+        return NO;
+    }
+    else if ( [ [ self.URL absoluteString ] isEqualToString: @"about:blank" ] )
+    {
+        return NO;
+    }
+    
+    return YES;
+}
+
 @end

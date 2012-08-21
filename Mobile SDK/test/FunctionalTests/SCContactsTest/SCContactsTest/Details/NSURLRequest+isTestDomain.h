@@ -3,5 +3,6 @@
 @interface NSURLRequest (isTestDomain)
 
 -(BOOL)isTestDomain;
+-(BOOL)isUrlMeaningful;
 
 @end
