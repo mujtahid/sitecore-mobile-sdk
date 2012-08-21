@@ -34,6 +34,9 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
 @interface SCContact ()
 
 @property ( nonatomic ) BOOL newContact;
+-(ABRecordRef)rawPerson CF_RETURNS_NOT_RETAINED;
+-(void)setRawPerson:( ABRecordRef )person_;
+
 
 @end
 
@@ -46,7 +49,8 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
 @synthesize contactInternalId = _contactInternalId;
 @synthesize person            = _person;
 @synthesize newContact        = _newContact;
-@synthesize addressBook       = _addressBook;
+
+@dynamic addressBook;
 
 @dynamic firstName
 , lastName
@@ -71,10 +75,7 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
 
 -(void)dealloc
 {
-    if ( _person )
-        CFRelease( _person );
-    if ( _addressBook )
-        CFRelease( _addressBook );
+    self.rawPerson = nil;
 }
 
 -(void)addField:( SCContactField* )field_
@@ -154,7 +155,7 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
             [ field_ readPropertyFromRecord: person_ ];
         } ];
 
-        _person = CFRetain( person_ );
+        self.rawPerson = person_;
     }
 
     return self;
@@ -201,6 +202,32 @@ static ABRecordRef createOrGetContactPerson( ABRecordID contactInternalId_
     }
     return _person;
 }
+
+-(ABRecordRef)rawPerson
+{
+    return self->_person;
+}
+
+-(void)setRawPerson:( ABRecordRef )person_
+{
+    if ( person_ == self->_person )
+    {
+        return;
+    }
+    
+    
+    if ( NULL != self->_person )
+    {
+        CFRelease( self->_person );
+    }
+    self->_person = NULL;
+
+    if ( NULL != person_ )
+    {
+        self->_person = CFRetain( person_ );
+    }
+}
+
 
 -(NSDictionary*)toDictionary
 {
