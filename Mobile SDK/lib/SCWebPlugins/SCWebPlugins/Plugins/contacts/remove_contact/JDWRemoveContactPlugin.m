@@ -33,7 +33,9 @@
     NSDictionary* components_ = [ _request.URL queryComponents ];
 
     NSString* accountInternalId_ = [ components_ firstValueIfExsistsForKey: @"contactInternalId" ];
-
+    NSLog(@"[BEGIN] - %@. ID : %@", NSStringFromClass( [ self class ] ), accountInternalId_ );
+    
+    
     ABAddressBookRef addressBook_ = ABAddressBookCreate();
 
     ABRecordRef record_ = ABAddressBookGetPersonWithRecordID( addressBook_
@@ -43,18 +45,25 @@
     {
         CFErrorRef error_ = NULL;
         bool added_ = ABAddressBookRemoveRecord( addressBook_, record_, &error_ );
-        if (!added_) { NSLog( @"can not remove record from AddressBook" ); }
+        if (!added_)
+        {
+            NSLog( @"can not remove record from AddressBook" );
+        }
     }
 
     CFErrorRef error_ = NULL;
     bool didSaved = ABAddressBookSave( addressBook_, &error_ );
-    if (!didSaved) { NSLog( @"can not save AddressBook" ); }
+    if (!didSaved)
+    {
+        NSLog( @"can not save AddressBook" );
+    }
 
     CFRelease( addressBook_ );
 
     [ self.delegate sendMessage: @"" ];
-
     [ self.delegate close ];
+    
+    NSLog(@"[END] - %@. ID : %@", NSStringFromClass( [ self class ] ), accountInternalId_ );
 }
 
 @end

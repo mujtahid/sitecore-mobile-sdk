@@ -199,21 +199,27 @@ function testNoContacts()
 function testRemoveContacts( contacts )
 {
     var contact_count_ = contacts.length;
+    scmobile.console.log( 'start remove contact_count: ' + contact_count_ );
     contacts.forEach(
         function( contact )
         {
             var onSuccess = function( contacts )
             {
+                scmobile.console.log( 'remove contact onSuccess called' );
                 contact_count_ = contact_count_ - 1;
                 if ( contact_count_ == 0 )
                 {
+                     scmobile.console.log( 'testNoContacts +' );
                      testNoContacts();
+                     scmobile.console.log( 'testNoContacts -' );
                 }
             }
             var onError = function( error )
             {
+                scmobile.console.log( 'remove contact error' );
                 resultCallback( "REMOVE_CONTACT_ERROR" );
             }
+            scmobile.console.log( 'try to remove contact' );
             contact.remove( onSuccess, onError );
         }
     );

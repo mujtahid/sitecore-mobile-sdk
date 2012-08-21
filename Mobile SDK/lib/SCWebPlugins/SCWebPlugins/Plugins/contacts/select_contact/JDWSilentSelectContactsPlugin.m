@@ -61,6 +61,8 @@
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
+    NSLog(@"[BEGIN] - %@.", NSStringFromClass( [ self class ] ) );
+    
     __weak JDWSilentSelectContactsPlugin* weakSelf_ = self;
     
     [ SCAddressBookFactory asyncAddressBookWithOnCreatedBlock:
@@ -84,7 +86,9 @@
                    status:( ABAuthorizationStatus )status_
 {
     NSString* msg_ = [ error_ localizedDescription ];
-
+    NSLog(@"[ERROR] - %@. %@", NSStringFromClass( [ self class ] ), error_ );
+    
+    
     [ self.delegate sendMessage: msg_ ];
     [ self.delegate close ];
 }
@@ -96,7 +100,9 @@
     NSString* msg_ = [ contacts_ scContactsToJSON ];
     msg_ = msg_ ?: @"{ error: 'Invalid Contacts JSON 2' }";
     [ self.delegate sendMessage: msg_ ];
-    [ self.delegate close ];   
+    [ self.delegate close ];
+    
+    NSLog(@"[END] - %@.", NSStringFromClass( [ self class ] ) );
 }
 
 @end
