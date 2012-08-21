@@ -8,6 +8,9 @@
 #import <AddressBook/AddressBook.h>
 
 @interface JDWSilentSaveContactPlugin : NSObject < SCWebPlugin >
+
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JDWSilentSaveContactPlugin

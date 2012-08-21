@@ -17,6 +17,8 @@
     , UIPopoverControllerDelegate
 >
 
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JDWSelectContactsPlugin

@@ -11,6 +11,9 @@
 #include "contacts.js.h"
 
 @interface JDWSilentSelectContactsPlugin : NSObject < SCWebPlugin >
+
+@property ( nonatomic, weak ) id< SCWebPluginDelegate > delegate;
+
 @end
 
 @implementation JDWSilentSelectContactsPlugin

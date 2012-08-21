@@ -18,7 +18,10 @@
 {
     self = [ super init ];
 
-    _request = request_;
+    if ( self )
+    {
+        self->_request = request_;
+    }
 
     return self;
 }
@@ -30,7 +33,7 @@
 
 -(void)didOpenInWebView:( UIWebView* )webView_
 {
-    NSDictionary* components_ = [ _request.URL queryComponents ];
+    NSDictionary* components_ = [ self->_request.URL queryComponents ];
 
     NSString* accountInternalId_ = [ components_ firstValueIfExsistsForKey: @"contactInternalId" ];
     NSLog(@"[BEGIN] - %@. ID : %@", NSStringFromClass( [ self class ] ), accountInternalId_ );
