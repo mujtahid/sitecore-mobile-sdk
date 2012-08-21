@@ -199,19 +199,39 @@ function testNoContacts()
 function testRemoveContacts( contacts )
 {
     var contact_count_ = contacts.length;
-    scmobile.console.log( 'start remove contact_count: ' + contact_count_ );
-    contacts.forEach(
-        function( contact )
-        {
+    var index_ = 0;
+    scmobile.console.log( '[BEGIN] testRemoveContacts: ' + contact_count_ );
+//    contacts.forEach(
+//        function( contact )
+//        {
+            var onSuccessGl_;
+            var onErrorGl_;
             var onSuccess = function( contacts )
             {
-                scmobile.console.log( 'remove contact onSuccess called' );
                 contact_count_ = contact_count_ - 1;
+                index_ = index_ + 1;
+
+                scmobile.console.log( '>> remove contact onSuccess called. Contacts count : ' + contact_count_ + 'Index : ' + index_ );
+
+                
                 if ( contact_count_ == 0 )
                 {
-                     scmobile.console.log( 'testNoContacts +' );
+                     scmobile.console.log( '>> >> testNoContacts +' );
                      testNoContacts();
-                     scmobile.console.log( 'testNoContacts -' );
+                     scmobile.console.log( '>> >> testNoContacts -' );
+                }
+                else
+                {
+                    scmobile.console.log( '>> >> remove again' );
+                    try
+                    {
+                       contacts[index_].remove( onSuccessGl_, onErrorGl_ );
+                    }
+                    catch ( error_ )
+                    {
+                        scmobile.console.log( '>> >> remove again error: ' + error_ );
+                    }
+                    scmobile.console.log( '>> >> remove again done' );
                 }
             }
             var onError = function( error )
@@ -219,16 +239,23 @@ function testRemoveContacts( contacts )
                 scmobile.console.log( 'remove contact error' );
                 resultCallback( "REMOVE_CONTACT_ERROR" );
             }
+            
+    
             scmobile.console.log( 'try to remove contact' );
-            contact.remove( onSuccess, onError );
-        }
-    );
+            onSuccessGl_ = onSuccess;
+            onErrorGl_   = onError;
+        
+            contacts[index_].remove( onSuccessGl_, onErrorGl_ );
+            scmobile.console.log( '[END] testRemoveContacts: ' + contact_count_ );
+//        }
+//    );
 };
 
 function testFindAllAndRemoveContacts()
 {
     try
     {
+        scmobile.console.log( '[BEGIN] testFindAllAndRemoveContacts' );
         function onDeviceReady()
         {
             scmobile.console.log( 'onDeviceReady 1' );
@@ -236,6 +263,7 @@ function testFindAllAndRemoveContacts()
             {
                 if ( contacts.length > 0 )
                 {
+                    scmobile.console.log( '[CALL] testRemoveContacts' );
                     testRemoveContacts( contacts );
                 }
                 else
@@ -248,7 +276,9 @@ function testFindAllAndRemoveContacts()
                 resultCallback( "FAIL_FIND_ERROR_CALLBACK" );
             }
 
+            scmobile.console.log( '[CALL] silentSelect' );
             scmobile.contacts.silentSelect( null, onSuccess, onError );
+            scmobile.console.log( '[END] testFindAllAndRemoveContacts' );
         }
 
         // Wait for Device2Web to load
