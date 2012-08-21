@@ -65,9 +65,7 @@
     {
         NSLog( @"can not save AddressBook" );
     }
-    
-    CFRelease( addressBook_ );
-    
+        
     [ self.delegate sendMessage: @"" ];
     [ self.delegate close ];
     
