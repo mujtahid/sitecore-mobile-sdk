@@ -44,7 +44,7 @@
     NSLog(@"[BEGIN] - %@. ID : %@", NSStringFromClass( [ self class ] ), accountInternalId_ );
     
     
-    ABAddressBookRef addressBook_ = ABAddressBookCreate();
+    ABAddressBookRef addressBook_ = self.addressBook.rawBook;
     
     ABRecordRef record_ = ABAddressBookGetPersonWithRecordID( addressBook_
                                                              , [ accountInternalId_ longLongValue ] );
