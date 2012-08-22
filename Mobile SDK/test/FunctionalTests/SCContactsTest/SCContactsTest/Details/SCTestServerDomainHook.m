@@ -20,7 +20,7 @@
 {
     NSURLResponse* response_ = [ [ NSHTTPURLResponse alloc ] initWithURL: self.request.URL
                                                               statusCode: 200
-                                                             HTTPVersion: (NSString*)kCFHTTPVersion1_1
+                                                             HTTPVersion: (__bridge NSString*)kCFHTTPVersion1_1
                                                             headerFields: nil ];
 
     [ self.client URLProtocol: self
