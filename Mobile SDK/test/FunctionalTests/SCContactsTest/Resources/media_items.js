@@ -52,6 +52,7 @@ function testCreateLargeMediaItem()
     {
         function onDeviceReady()
         {
+            alert( 'testCreateLargeMediaItem->onDeviceReady' );
             scmobile.console.log('test_create_media_item');
             
             var createItemInfo = {};
@@ -81,6 +82,8 @@ function testCreateLargeMediaItem()
         
         // Wait for Device2Web to load
         document.addEventListener('scmobileReady', onDeviceReady, false);
+        
+        return 'testCreateLargeMediaItem - JS';
     }
     catch( exception )
     {
