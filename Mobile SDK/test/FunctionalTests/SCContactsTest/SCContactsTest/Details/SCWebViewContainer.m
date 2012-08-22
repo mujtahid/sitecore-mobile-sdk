@@ -49,8 +49,12 @@
 
 -(void)webViewDidFinishLoad:( SCWebView* )webView_
 {
-    [ _webView stringByEvaluatingJavaScriptFromString: self->_javascript ];
-    [ webView_ stringByEvaluatingJavaScriptFromString: self->_JSToTest ];
+    NSString* jsResult_ = nil;
+    jsResult_ = [ _webView stringByEvaluatingJavaScriptFromString: self->_javascript ];
+    NSLog(@"webViewDidFinishLoad1 - Result : %@", jsResult_ );
+    
+    jsResult_ = [ webView_ stringByEvaluatingJavaScriptFromString: self->_JSToTest ];
+    NSLog(@"webViewDidFinishLoad2 - Result : %@", jsResult_ );    
 }
 
 - (BOOL)webView:(SCWebView *)webView
@@ -61,7 +65,7 @@ shouldStartLoadWithRequest:( NSURLRequest* )request_
     {
         return YES;
     }
-    else if ( [ request_ isUrlMeaningful ] )
+    else if ( ![ request_ isUrlMeaningful ] )
     {
         return YES;
     }
