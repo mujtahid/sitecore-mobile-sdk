@@ -22,7 +22,7 @@
 
         [ self prepare ];
 
-        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/webapi"
+        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/item"
                                                              login: @"admin"
                                                           password: @"b" ];
 
@@ -46,7 +46,9 @@
                      afterTest: afterTest_ ];
 
     if ( failDescription_ )
+    {
         GHFail( failDescription_ );
+    }
 }
 
 -(void)testCreateLargeMediaItem
@@ -65,7 +67,7 @@
         
         [ self prepare ];
         
-        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/webapi"
+        SCApiContext* apiContext_ = [ SCApiContext contextWithHost: @"ws-alr1.dk.sitecore.net/-/item"
                                                              login: @"admin"
                                                           password: @"b" ];
         apiContext_.defaultDatabase = @"core";
@@ -92,7 +94,9 @@
                      afterTest: afterTest_ ];
     
     if ( failDescription_ )
+    {
         GHFail( failDescription_ );
+    }
 }
 
 
