@@ -57,7 +57,7 @@ static SCItemReaderScopeType scope_ = SCItemReaderSelfScope;
         GHAssertTrue( product_item_.readChildren == nil, @"OK" );
 
         GHAssertTrue( product_item_.allFieldsByName != nil, @"OK" );
-        NSLog( @"products_items count: %d", [ product_item_.allFieldsByName count ] );
+        NSLog( @"product fields count: %d", [ product_item_.allFieldsByName count ] );
         GHAssertTrue( [ product_item_.allFieldsByName count ] == [ product_item_.readFieldsByName count ], @"OK" );
         GHAssertTrue( [ product_item_.readFieldsByName count ] == SCCommunityAllFieldsCount, @"OK" );
     }

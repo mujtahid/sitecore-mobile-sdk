@@ -196,9 +196,9 @@ typedef SCAsyncOp (^SCTestedReader)( SCApiContext* itemReader_
                                  selector:( SEL )selector_
 {
     __weak __block SCApiContext* apiContext_ = nil;
-    __block NSArray* products_items_ = nil;
-    __block BOOL called_instantly_ = NO;
-    __block SCItem* product_item_ = nil;
+    __block NSArray* productsItems_ = nil;
+    __block BOOL calledInstantly_ = NO;
+    __block SCItem* productItem_ = nil;
 
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
@@ -212,27 +212,27 @@ typedef SCAsyncOp (^SCTestedReader)( SCApiContext* itemReader_
         testedReader_( apiContext_, path_, fieldsNames_ )( ^( NSArray* items_, NSError* error_ )
         {
             was_called_ = YES;
-            products_items_ = items_;
+            productsItems_ = items_;
             didFinishCallback_();
         } );
 
-        called_instantly_ = was_called_;
+        calledInstantly_ = was_called_;
     };
 
     void (^resultTest_)(void) = ^void( void )
     {
         GHAssertTrue( apiContext_ != nil, @"OK" );
-        GHAssertTrue( products_items_ != nil, @"OK" );
-        GHAssertTrue( [ products_items_ count ] == 1, @"OK" );
+        GHAssertTrue( productsItems_ != nil, @"OK" );
+        GHAssertTrue( [ productsItems_ count ] == 1, @"OK" );
 
-        product_item_ = [ products_items_ objectAtIndex: 0 ];
+        productItem_ = [ productsItems_ objectAtIndex: 0 ];
 
-        GHAssertTrue( product_item_ != nil, @"OK" );
-        GHAssertTrue( product_item_.parent == nil, @"OK" );
-        GHAssertTrue( [ product_item_.displayName isEqualToString: @"Products" ], @"OK" );
-        GHAssertTrue( product_item_.allChildren == nil, @"OK" );
-        GHAssertTrue( product_item_.allFieldsByName == nil, @"OK" );
-        GHAssertTrue( [ product_item_.readFieldsByName count ] == 0, @"OK" );
+        GHAssertTrue( productItem_ != nil, @"OK" );
+        GHAssertTrue( productItem_.parent == nil, @"OK" );
+        GHAssertTrue( [ productItem_.displayName isEqualToString: @"Products" ], @"OK" );
+        GHAssertTrue( productItem_.allChildren == nil, @"OK" );
+        GHAssertTrue( productItem_.allFieldsByName == nil, @"OK" );
+        GHAssertTrue( [ productItem_.readFieldsByName count ] == 0, @"OK" );
     };
 
     //test first call
@@ -248,7 +248,7 @@ typedef SCAsyncOp (^SCTestedReader)( SCApiContext* itemReader_
         [ self performAsyncRequestOnMainThreadWithBlock: block_
                                                selector: selector_ ];
 
-        GHAssertTrue( called_instantly_, @"OK" );
+        GHAssertTrue( calledInstantly_, @"OK" );
         resultTest_();
     }
 }

@@ -330,12 +330,12 @@ static NSString* web_path_ = @"/sitecore/layout/Layouts/Test Data/Negative Tests
     
     GHAssertTrue( apiContext_ != nil, @"OK" );
     GHAssertTrue( item_ != nil, @"OK" );
+    NSLog( @"item_.readFieldsByName: %@", [item_ readFieldsByName] );
+    NSLog( @"item_.readFieldsByName: %d", [item_.readFieldsByName count ] );
     GHAssertTrue( response_error_ == nil, @"OK" );
     GHAssertTrue( [ [ item_ displayName ] hasPrefix: @"raaaaaaaaw! :P" ], @"OK" );
     GHAssertTrue( [ [ item_ itemTemplate ] isEqualToString: @"Test Templates/Many Fields" ], @"OK" );
     
-    NSLog( @"item_.readFieldsByName: %@", [item_ readFieldsByName] );
-    NSLog( @"item_.readFieldsByName: %d", [item_.readFieldsByName count ] );
     GHAssertTrue( [ item_.readFieldsByName count ] == 39, @"OK" );
 
     GHAssertTrue( [ [ [ item_ fieldWithName:@"a" ] rawValue ] isEqualToString: @"raaaaaaaaw! :P" ], @"OK" );
@@ -446,57 +446,7 @@ static NSString* web_path_ = @"/sitecore/layout/Layouts/Test Data/Negative Tests
     GHAssertTrue( [ item_.readFieldsByName count ] == 0, @"OK" );
     NSLog( @"item_.readFieldsByName: %@", item_.readFieldsByName );
 }
-/*
--(void)testCreateItemWithoutCreatePermission
-{
-    __block SCApiContext* apiContext_ = nil;
-    __block SCItem* item_ = nil;
-    __block SCItem* read_item_ = nil;
-    __block NSError* response_error_ = nil;
-    apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName 
-                                           login: @"sitecore\\nocreate"
-                                        password: @"nocreate" ];
-    
-    apiContext_.defaultDatabase = @"web";
-    
-    void (^create_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        SCCreateItemRequest* request_ = [ SCCreateItemRequest requestWithItemPath: web_path_ ];
-        
-        request_.itemName     = @"ItemWithoutCreatePermission";
-        request_.itemTemplate = @"System/Layout/Layout";
-        
-        [ apiContext_ itemCreatorWithRequest: request_ ]( ^( id result_, NSError* error_ )
-        {
-            item_ = result_;
-            response_error_ = error_;
-            didFinishCallback_();
-        } );
-    };
-    
-    void (^read_block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
-    {
-        [ apiContext_ itemReaderForItemPath: web_path_ ]( ^( id read_item_result_, NSError* read_error_ )
-        {
-            read_item_ = read_item_result_;
-            didFinishCallback_();                                                  
-        } );
-    }; 
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: read_block_
-                                           selector: _cmd ];
-    
-    [ self performAsyncRequestOnMainThreadWithBlock: create_block_
-                                           selector: _cmd ];
-    
-    NSLog( @"apiContext_: %@", apiContext_ );
-    NSLog( @"response_error_: %@", response_error_ );
-    GHAssertTrue( read_item_ != nil, @"OK" );
-    GHAssertTrue( item_ == nil, @"OK" );
-    GHAssertTrue( response_error_ != nil, @"OK" );
-    GHAssertTrue( [ response_error_ isKindOfClass: [ SCResponseError class ] ], @"OK" );
-}
-*/
+
 -(void)testCreateItemInCoreWithoutSecurityAccess
 {
     __weak __block SCApiContext* apiContext_ = nil;
@@ -506,9 +456,7 @@ static NSString* web_path_ = @"/sitecore/layout/Layouts/Test Data/Negative Tests
     
     void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
     {
-        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName 
-                                               login: SCWebApiLogin
-                                            password: SCWebApiPassword ];
+        apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
         
         apiContext_.defaultDatabase = @"core";
         SCCreateItemRequest* request_ = [ SCCreateItemRequest requestWithItemPath: path_ ];
@@ -533,7 +481,7 @@ static NSString* web_path_ = @"/sitecore/layout/Layouts/Test Data/Negative Tests
      GHAssertTrue( apiContext_ == nil, @"OK" );
      GHAssertTrue( response_error_ != nil, @"OK" );
      NSLog( @"response: %@", response_error_ );
-     GHAssertTrue( [ response_error_ isKindOfClass: [ SCResponseError class ] ], @"OK" );
+     GHAssertTrue( [ response_error_ isKindOfClass: [ SCNoItemError class ] ], @"OK" );
      
 }
 

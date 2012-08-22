@@ -203,6 +203,15 @@
     {
         sourceType_ = UIImagePickerControllerSourceTypePhotoLibrary;
     }
+
+#if TARGET_IPHONE_SIMULATOR
+    //fix crash for simulator only
+    if ( sourceType_ == UIImagePickerControllerSourceTypeSavedPhotosAlbum )
+    {
+        sourceType_ = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+#endif //TARGET_IPHONE_SIMULATOR
+
     self->_imagePickerController.sourceType = sourceType_;
 
     if ( [ [ UIDevice currentDevice ] userInterfaceIdiom ] == UIUserInterfaceIdiomPhone )

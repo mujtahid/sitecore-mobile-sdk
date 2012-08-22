@@ -710,4 +710,48 @@
     GHAssertTrue( [ value_item_ isEqual: link_data_ ], @"OK" );
 }
 
+-(void)testGetStandardField
+{
+    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCItem* item_ = nil;
+    __block SCField* field_ = nil;
+    
+    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+    {
+        @autoreleasepool
+        {
+            NSString* path_ = @"/sitecore/content/Nicam/Community/Macro_Community/Macro_Calendar";
+            apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName ];
+            [ apiContext_ itemReaderForItemPath:  path_ ]( ^( id result_, NSError* error_ )
+            {
+                item_ = result_;
+                if ( error_ )
+                {
+                    didFinishCallback_();
+                    return;
+                }
+                NSSet* fields_ = [ NSSet setWithObject: @"__Display name" ];
+                [ item_ fieldsReaderForFieldsNames: fields_ ]( ^( id result_, NSError* error_ )
+                {
+                    field_ = [ item_ fieldWithName:  @"__Display name" ];
+                    didFinishCallback_();
+                } );
+            } );
+        }
+    };
+    
+    [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                           selector: _cmd ];
+    
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    GHAssertTrue( item_ != nil, @"OK" );
+    //field_ test
+    GHAssertTrue( field_ != nil, @"OK" );
+    GHAssertTrue( [ field_ rawValue ] != nil, @"OK" );
+    GHAssertTrue( [ field_ rawValue ] == [ item_ displayName ], @"OK" );
+    
+}
+
+
+
 @end

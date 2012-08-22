@@ -33,9 +33,7 @@
     if ( resultString )
     {
         [ self.qrcodeView stopCapture ];
-        SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item"
-                                                          login: @"sitecore\\admin"
-                                                       password: @"b"];
+        SCApiContext* context_ = [ SCApiContext contextWithHost: @"mobilesdk.sc-demo.net/-/item" ];
         [ context_ itemReaderForItemPath: resultString ]( ^( id result_, NSError* error_ )
         {
             if ( !error_ )

@@ -64,47 +64,104 @@
 		1BD6A9D31518CAC300D2FC84 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD6A9D21518CAC300D2FC84 /* MapKit.framework */; };
 		1BF4D959156680AE007D8CBF /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
 		1BF4D970156680F6007D8CBF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B33953615663B0B00E935E9 /* libc++.dylib */; };
-		2510FF5015E36987005F8002 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
-		2510FF5115E36988005F8002 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
-		2510FF5215E36BD5005F8002 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
-		2510FF5315E36BD5005F8002 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
-		2510FF5415E36BDC005F8002 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
-		2510FF5515E36BDC005F8002 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
-		2510FF5815E36C44005F8002 /* EditItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.m */; };
-		2510FF5915E36C45005F8002 /* EditItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.m */; };
-		2510FF5A15E36C9A005F8002 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
-		2510FF5B15E36C9B005F8002 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
-		2510FF5C15E36C9E005F8002 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
-		2510FF5D15E36C9E005F8002 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
-		2510FF6215E36FA3005F8002 /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3251529F3420010E0B9 /* ReadItemsIgnoreCacheTest.m */; };
-		2510FF6315E36FA3005F8002 /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3251529F3420010E0B9 /* ReadItemsIgnoreCacheTest.m */; };
-		2510FF6415E384EB005F8002 /* ReadItemsCPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34C1529F36F0010E0B9 /* ReadItemsCPTest.m */; };
-		2510FF6515E384EC005F8002 /* ReadItemsCPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34C1529F36F0010E0B9 /* ReadItemsCPTest.m */; };
-		2510FF6615E38502005F8002 /* ReadItemsCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34D1529F36F0010E0B9 /* ReadItemsCTest.m */; };
-		2510FF6715E38502005F8002 /* ReadItemsPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34E1529F36F0010E0B9 /* ReadItemsPTest.m */; };
-		2510FF6815E38502005F8002 /* ReadItemsSCPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34F1529F36F0010E0B9 /* ReadItemsSCPTest.m */; };
-		2510FF6915E38502005F8002 /* ReadItemsSCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3501529F36F0010E0B9 /* ReadItemsSCTest.m */; };
-		2510FF6A15E38502005F8002 /* ReadItemsSPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3511529F36F0010E0B9 /* ReadItemsSPTest.m */; };
-		2510FF6B15E38502005F8002 /* ReadItemsSTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3521529F36F0010E0B9 /* ReadItemsSTest.m */; };
-		2510FF6C15E38502005F8002 /* ReadItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3531529F36F0010E0B9 /* ReadItemsTest.m */; };
-		2510FF6D15E38502005F8002 /* ReadItemsWithQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3541529F36F0010E0B9 /* ReadItemsWithQueryTest.m */; };
-		2510FF6E15E38502005F8002 /* RootBranchReadItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3551529F36F0010E0B9 /* RootBranchReadItemTest.m */; };
-		2510FF6F15E38502005F8002 /* ReadItemsCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34D1529F36F0010E0B9 /* ReadItemsCTest.m */; };
-		2510FF7015E38502005F8002 /* ReadItemsPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34E1529F36F0010E0B9 /* ReadItemsPTest.m */; };
-		2510FF7115E38502005F8002 /* ReadItemsSCPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34F1529F36F0010E0B9 /* ReadItemsSCPTest.m */; };
-		2510FF7215E38502005F8002 /* ReadItemsSCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3501529F36F0010E0B9 /* ReadItemsSCTest.m */; };
-		2510FF7315E38502005F8002 /* ReadItemsSPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3511529F36F0010E0B9 /* ReadItemsSPTest.m */; };
-		2510FF7415E38502005F8002 /* ReadItemsSTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3521529F36F0010E0B9 /* ReadItemsSTest.m */; };
-		2510FF7515E38502005F8002 /* ReadItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3531529F36F0010E0B9 /* ReadItemsTest.m */; };
-		2510FF7615E38502005F8002 /* ReadItemsWithQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3541529F36F0010E0B9 /* ReadItemsWithQueryTest.m */; };
-		2510FF7715E38502005F8002 /* RootBranchReadItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3551529F36F0010E0B9 /* RootBranchReadItemTest.m */; };
+		2510007B15E3B94A005F8002 /* RenderingHTMLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F800B2152D87E400770904 /* RenderingHTMLTest.m */; };
+		2510007C15E3B94B005F8002 /* RenderingHTMLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F800B2152D87E400770904 /* RenderingHTMLTest.m */; };
+		2510007D15E3BA66005F8002 /* ReadItemsCPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34C1529F36F0010E0B9 /* ReadItemsCPTest.m */; };
+		2510007E15E3BA66005F8002 /* ReadItemsCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34D1529F36F0010E0B9 /* ReadItemsCTest.m */; };
+		2510007F15E3BA66005F8002 /* ReadItemsPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34E1529F36F0010E0B9 /* ReadItemsPTest.m */; };
+		2510008015E3BA66005F8002 /* ReadItemsSCPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34F1529F36F0010E0B9 /* ReadItemsSCPTest.m */; };
+		2510008115E3BA66005F8002 /* ReadItemsSCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3501529F36F0010E0B9 /* ReadItemsSCTest.m */; };
+		2510008215E3BA66005F8002 /* ReadItemsSPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3511529F36F0010E0B9 /* ReadItemsSPTest.m */; };
+		2510008315E3BA66005F8002 /* ReadItemsSTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3521529F36F0010E0B9 /* ReadItemsSTest.m */; };
+		2510008415E3BA66005F8002 /* ReadItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3531529F36F0010E0B9 /* ReadItemsTest.m */; };
+		2510008515E3BA66005F8002 /* ReadItemsWithQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3541529F36F0010E0B9 /* ReadItemsWithQueryTest.m */; };
+		2510008615E3BA66005F8002 /* RootBranchReadItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3551529F36F0010E0B9 /* RootBranchReadItemTest.m */; };
+		2510008715E3BA67005F8002 /* ReadItemsCPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34C1529F36F0010E0B9 /* ReadItemsCPTest.m */; };
+		2510008815E3BA67005F8002 /* ReadItemsCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34D1529F36F0010E0B9 /* ReadItemsCTest.m */; };
+		2510008915E3BA67005F8002 /* ReadItemsPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34E1529F36F0010E0B9 /* ReadItemsPTest.m */; };
+		2510008A15E3BA67005F8002 /* ReadItemsSCPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D34F1529F36F0010E0B9 /* ReadItemsSCPTest.m */; };
+		2510008B15E3BA67005F8002 /* ReadItemsSCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3501529F36F0010E0B9 /* ReadItemsSCTest.m */; };
+		2510008C15E3BA67005F8002 /* ReadItemsSPTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3511529F36F0010E0B9 /* ReadItemsSPTest.m */; };
+		2510008D15E3BA67005F8002 /* ReadItemsSTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3521529F36F0010E0B9 /* ReadItemsSTest.m */; };
+		2510008E15E3BA67005F8002 /* ReadItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3531529F36F0010E0B9 /* ReadItemsTest.m */; };
+		2510008F15E3BA67005F8002 /* ReadItemsWithQueryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3541529F36F0010E0B9 /* ReadItemsWithQueryTest.m */; };
+		2510009015E3BA67005F8002 /* RootBranchReadItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3551529F36F0010E0B9 /* RootBranchReadItemTest.m */; };
+		2510009115E3BA6A005F8002 /* PagingItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3461529F3690010E0B9 /* PagingItemsTest.m */; };
+		2510009215E3BA6A005F8002 /* ReadPagingItemsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3471529F3690010E0B9 /* ReadPagingItemsAuthTest.m */; };
+		2510009315E3BA6A005F8002 /* PagingItemsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3461529F3690010E0B9 /* PagingItemsTest.m */; };
+		2510009415E3BA6A005F8002 /* ReadPagingItemsAuthTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3471529F3690010E0B9 /* ReadPagingItemsAuthTest.m */; };
+		2510009515E3BA6D005F8002 /* LanguageReaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A481546CB8300370DF8 /* LanguageReaderTest.m */; };
+		2510009615E3BA6D005F8002 /* LanguageReaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A481546CB8300370DF8 /* LanguageReaderTest.m */; };
+		2510009715E3BA71005F8002 /* GetFieldFromItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3381529F35B0010E0B9 /* GetFieldFromItemTest.m */; };
+		2510009815E3BA71005F8002 /* GetFieldsFromItemReaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3391529F35B0010E0B9 /* GetFieldsFromItemReaderTest.m */; };
+		2510009915E3BA71005F8002 /* GetFieldValueFromFieldTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D33A1529F35B0010E0B9 /* GetFieldValueFromFieldTest.m */; };
+		2510009A15E3BA71005F8002 /* ReadFieldsWithSecurityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D33B1529F35B0010E0B9 /* ReadFieldsWithSecurityTest.m */; };
+		2510009B15E3BA72005F8002 /* GetFieldFromItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3381529F35B0010E0B9 /* GetFieldFromItemTest.m */; };
+		2510009C15E3BA72005F8002 /* GetFieldsFromItemReaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3391529F35B0010E0B9 /* GetFieldsFromItemReaderTest.m */; };
+		2510009D15E3BA72005F8002 /* GetFieldValueFromFieldTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D33A1529F35B0010E0B9 /* GetFieldValueFromFieldTest.m */; };
+		2510009E15E3BA72005F8002 /* ReadFieldsWithSecurityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D33B1529F35B0010E0B9 /* ReadFieldsWithSecurityTest.m */; };
+		2510009F15E3BA77005F8002 /* LanguageReaderNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3411529F3630010E0B9 /* LanguageReaderNegativeTest.m */; };
+		251000A015E3BA77005F8002 /* AuthErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3291529F3510010E0B9 /* AuthErrorTest.m */; };
+		251000A115E3BA77005F8002 /* FieldsErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32A1529F3510010E0B9 /* FieldsErrorTest.m */; };
+		251000A215E3BA77005F8002 /* InvalidPathErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32B1529F3510010E0B9 /* InvalidPathErrorTest.m */; };
+		251000A315E3BA77005F8002 /* InvalidRequestErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32C1529F3510010E0B9 /* InvalidRequestErrorTest.m */; };
+		251000A415E3BA77005F8002 /* NoItemErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32D1529F3510010E0B9 /* NoItemErrorTest.m */; };
+		251000A515E3BA77005F8002 /* NoItemFieldErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32E1529F3510010E0B9 /* NoItemFieldErrorTest.m */; };
+		251000A615E3BA77005F8002 /* ResponseErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32F1529F3510010E0B9 /* ResponseErrorTest.m */; };
+		251000A715E3BA77005F8002 /* AllNegativeItemsRemoveFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4E1546CC1700370DF8 /* AllNegativeItemsRemoveFirst.m */; };
+		251000A815E3BA77005F8002 /* CreateItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D144152994CA0010E0B9 /* CreateItemNegativeTest.m */; };
+		251000A915E3BA77005F8002 /* EditItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258C773F152DBBA400B81592 /* EditItemNegativeTest.m */; };
+		251000AA15E3BA77005F8002 /* UploadMediaNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258A920C1532C67700EBD05A /* UploadMediaNegativeTest.m */; };
+		251000AB15E3BA77005F8002 /* RemoveAllNegativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A35038152D826B00EAE653 /* RemoveAllNegativeTests.m */; };
+		251000AC15E3BA77005F8002 /* LanguageReaderNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3411529F3630010E0B9 /* LanguageReaderNegativeTest.m */; };
+		251000AD15E3BA77005F8002 /* AuthErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3291529F3510010E0B9 /* AuthErrorTest.m */; };
+		251000AE15E3BA77005F8002 /* FieldsErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32A1529F3510010E0B9 /* FieldsErrorTest.m */; };
+		251000AF15E3BA77005F8002 /* InvalidPathErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32B1529F3510010E0B9 /* InvalidPathErrorTest.m */; };
+		251000B015E3BA77005F8002 /* InvalidRequestErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32C1529F3510010E0B9 /* InvalidRequestErrorTest.m */; };
+		251000B115E3BA77005F8002 /* NoItemErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32D1529F3510010E0B9 /* NoItemErrorTest.m */; };
+		251000B215E3BA77005F8002 /* NoItemFieldErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32E1529F3510010E0B9 /* NoItemFieldErrorTest.m */; };
+		251000B315E3BA77005F8002 /* ResponseErrorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D32F1529F3510010E0B9 /* ResponseErrorTest.m */; };
+		251000B415E3BA77005F8002 /* AllNegativeItemsRemoveFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4E1546CC1700370DF8 /* AllNegativeItemsRemoveFirst.m */; };
+		251000B515E3BA77005F8002 /* CreateItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D144152994CA0010E0B9 /* CreateItemNegativeTest.m */; };
+		251000B615E3BA77005F8002 /* EditItemNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258C773F152DBBA400B81592 /* EditItemNegativeTest.m */; };
+		251000B715E3BA77005F8002 /* UploadMediaNegativeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258A920C1532C67700EBD05A /* UploadMediaNegativeTest.m */; };
+		251000B815E3BA77005F8002 /* RemoveAllNegativeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A35038152D826B00EAE653 /* RemoveAllNegativeTests.m */; };
+		251000B915E3BA7C005F8002 /* ReadItemsCacheTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3241529F3420010E0B9 /* ReadItemsCacheTest.mm */; };
+		251000BA15E3BA7C005F8002 /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3251529F3420010E0B9 /* ReadItemsIgnoreCacheTest.m */; };
+		251000BB15E3BA7D005F8002 /* ReadItemsCacheTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3241529F3420010E0B9 /* ReadItemsCacheTest.mm */; };
+		251000BC15E3BA7D005F8002 /* ReadItemsIgnoreCacheTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3251529F3420010E0B9 /* ReadItemsIgnoreCacheTest.m */; };
+		251000BD15E3BA82005F8002 /* ReadFieldsWithAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3131529F3370010E0B9 /* ReadFieldsWithAuth.m */; };
+		251000BE15E3BA82005F8002 /* ReadItemsCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3141529F3370010E0B9 /* ReadItemsCPTestAuth.m */; };
+		251000BF15E3BA82005F8002 /* ReadItemsCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3151529F3370010E0B9 /* ReadItemsCTestAuth.m */; };
+		251000C015E3BA82005F8002 /* ReadItemsPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3161529F3370010E0B9 /* ReadItemsPTestAuth.m */; };
+		251000C115E3BA82005F8002 /* REadItemsSCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3171529F3370010E0B9 /* REadItemsSCPTestAuth.m */; };
+		251000C215E3BA82005F8002 /* ReadItemsSCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3181529F3370010E0B9 /* ReadItemsSCTestAuth.m */; };
+		251000C315E3BA82005F8002 /* ReadItemsSPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3191529F3370010E0B9 /* ReadItemsSPTestAuth.m */; };
+		251000C415E3BA82005F8002 /* ReadItemsSTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D31A1529F3370010E0B9 /* ReadItemsSTestAuth.m */; };
+		251000C515E3BA83005F8002 /* ReadFieldsWithAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3131529F3370010E0B9 /* ReadFieldsWithAuth.m */; };
+		251000C615E3BA83005F8002 /* ReadItemsCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3141529F3370010E0B9 /* ReadItemsCPTestAuth.m */; };
+		251000C715E3BA83005F8002 /* ReadItemsCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3151529F3370010E0B9 /* ReadItemsCTestAuth.m */; };
+		251000C815E3BA83005F8002 /* ReadItemsPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3161529F3370010E0B9 /* ReadItemsPTestAuth.m */; };
+		251000C915E3BA83005F8002 /* REadItemsSCPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3171529F3370010E0B9 /* REadItemsSCPTestAuth.m */; };
+		251000CA15E3BA83005F8002 /* ReadItemsSCTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3181529F3370010E0B9 /* ReadItemsSCTestAuth.m */; };
+		251000CB15E3BA83005F8002 /* ReadItemsSPTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3191529F3370010E0B9 /* ReadItemsSPTestAuth.m */; };
+		251000CC15E3BA83005F8002 /* ReadItemsSTestAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D31A1529F3370010E0B9 /* ReadItemsSTestAuth.m */; };
+		251000CD15E3BA86005F8002 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
+		251000CE15E3BA86005F8002 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
+		251000CF15E3BA86005F8002 /* EditItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.m */; };
+		251000D015E3BA86005F8002 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
+		251000D115E3BA86005F8002 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
+		251000D215E3BA86005F8002 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
+		251000D315E3BA87005F8002 /* CreateItemPositiveTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */; };
+		251000D415E3BA87005F8002 /* AFisrtRemoveAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 259297B9152B09C400B81BA4 /* AFisrtRemoveAll.m */; };
+		251000D515E3BA87005F8002 /* EditItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA215246DA000E7AE0D /* EditItemTest.m */; };
+		251000D615E3BA87005F8002 /* UploadMediaTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 251C3DA515246DBE00E7AE0D /* UploadMediaTest.m */; };
+		251000D715E3BA87005F8002 /* DeleteItemTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 258F6E661525A50000A0E959 /* DeleteItemTest.m */; };
+		251000D815E3BA87005F8002 /* DeleteAllItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3611529F46D0010E0B9 /* DeleteAllItems.m */; };
 		2560DB5E1532DECA0096DC59 /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2560DB5D1532DECA0096DC59 /* large_image.jpg */; };
 		2560DB5F1532DECA0096DC59 /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2560DB5D1532DECA0096DC59 /* large_image.jpg */; };
 		258A14F614E537E600DA4DE5 /* auto tests.png in Resources */ = {isa = PBXBuildFile; fileRef = 258A14F514E537E600DA4DE5 /* auto tests.png */; };
 		2596022E15DE7637002EC1F5 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF4D958156680AE007D8CBF /* libstdc++.dylib */; };
-		25F56AD615DE90D7008804B4 /* GetFieldsFromItemReaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D3391529F35B0010E0B9 /* GetFieldsFromItemReaderTest.m */; };
-		25F56AD715DE90D7008804B4 /* GetFieldValueFromFieldTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D33A1529F35B0010E0B9 /* GetFieldValueFromFieldTest.m */; };
-		25F56AD815DE90D7008804B4 /* ReadFieldsWithSecurityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2589D33B1529F35B0010E0B9 /* ReadFieldsWithSecurityTest.m */; };
 		7ED1CC63158646E800EED5EA /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED1CC62158646E800EED5EA /* SitecoreMobileSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,7 +184,7 @@
 
 /* Begin PBXFileReference section */
 		06F800B2152D87E400770904 /* RenderingHTMLTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderingHTMLTest.m; sourceTree = "<group>"; };
-		1B097A481546CB8300370DF8 /* LanguageReaderPositiveTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderPositiveTest.m; sourceTree = "<group>"; };
+		1B097A481546CB8300370DF8 /* LanguageReaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderTest.m; sourceTree = "<group>"; };
 		1B097A4B1546CBDA00370DF8 /* CreateItemPositiveTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateItemPositiveTest.m; sourceTree = "<group>"; };
 		1B097A4E1546CC1700370DF8 /* AllNegativeItemsRemoveFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllNegativeItemsRemoveFirst.m; sourceTree = "<group>"; };
 		1B0D826D1519CD3B00EC4A92 /* SCAllMobileSDKLibs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SCAllMobileSDKLibs.xcodeproj; path = ../../../lib/SCAllMobileSDKLibs/SCAllMobileSDKLibs.xcodeproj; sourceTree = "<group>"; };
@@ -192,7 +249,7 @@
 		2589D3391529F35B0010E0B9 /* GetFieldsFromItemReaderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldsFromItemReaderTest.m; sourceTree = "<group>"; };
 		2589D33A1529F35B0010E0B9 /* GetFieldValueFromFieldTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFieldValueFromFieldTest.m; sourceTree = "<group>"; };
 		2589D33B1529F35B0010E0B9 /* ReadFieldsWithSecurityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadFieldsWithSecurityTest.m; sourceTree = "<group>"; };
-		2589D3411529F3630010E0B9 /* LanguageReaderNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageReaderNegativeTest.m; sourceTree = "<group>"; };
+		2589D3411529F3630010E0B9 /* LanguageReaderNegativeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LanguageReaderNegativeTest.m; path = ../LanguagesTest/LanguageReaderNegativeTest.m; sourceTree = "<group>"; };
 		2589D3461529F3690010E0B9 /* PagingItemsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingItemsTest.m; sourceTree = "<group>"; };
 		2589D3471529F3690010E0B9 /* ReadPagingItemsAuthTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadPagingItemsAuthTest.m; sourceTree = "<group>"; };
 		2589D34C1529F36F0010E0B9 /* ReadItemsCPTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadItemsCPTest.m; sourceTree = "<group>"; };
@@ -359,7 +416,7 @@
 				2589D3451529F3690010E0B9 /* PagingItemsTest */,
 				2589D3401529F3630010E0B9 /* LanguagesTest */,
 				2589D3371529F35B0010E0B9 /* FieldsReaderTest */,
-				2589D3281529F3510010E0B9 /* ErrorsTest */,
+				2589D3281529F3510010E0B9 /* NegativeTest */,
 				2589D3231529F3420010E0B9 /* Cache */,
 				2589D3121529F3370010E0B9 /* AuthenticationTest */,
 				251C3D9B15246CEB00E7AE0D /* CreateEditDeleteItemTest */,
@@ -453,9 +510,10 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
-		2589D3281529F3510010E0B9 /* ErrorsTest */ = {
+		2589D3281529F3510010E0B9 /* NegativeTest */ = {
 			isa = PBXGroup;
 			children = (
+				2589D3411529F3630010E0B9 /* LanguageReaderNegativeTest.m */,
 				2589D3291529F3510010E0B9 /* AuthErrorTest.m */,
 				2589D32A1529F3510010E0B9 /* FieldsErrorTest.m */,
 				2589D32B1529F3510010E0B9 /* InvalidPathErrorTest.m */,
@@ -469,6 +527,7 @@
 				258A920C1532C67700EBD05A /* UploadMediaNegativeTest.m */,
 				25A35038152D826B00EAE653 /* RemoveAllNegativeTests.m */,
 			);
+			name = NegativeTest;
 			path = ErrorsTest;
 			sourceTree = "<group>";
 		};
@@ -486,8 +545,7 @@
 		2589D3401529F3630010E0B9 /* LanguagesTest */ = {
 			isa = PBXGroup;
 			children = (
-				1B097A481546CB8300370DF8 /* LanguageReaderPositiveTest.m */,
-				2589D3411529F3630010E0B9 /* LanguageReaderNegativeTest.m */,
+				1B097A481546CB8300370DF8 /* LanguageReaderTest.m */,
 			);
 			path = LanguagesTest;
 			sourceTree = "<group>";
@@ -631,23 +689,53 @@
 				1B925BAD14615C7E00C9FC49 /* main.m in Sources */,
 				1B925D9D146197FF00C9FC49 /* SCAsyncTestCase.m in Sources */,
 				1B7AC4B21491036300DDD31D /* SCGlobalSettings.m in Sources */,
-				2510FF5015E36987005F8002 /* CreateItemPositiveTest.m in Sources */,
-				2510FF5215E36BD5005F8002 /* AFisrtRemoveAll.m in Sources */,
-				2510FF5415E36BDC005F8002 /* DeleteAllItems.m in Sources */,
-				2510FF5815E36C44005F8002 /* EditItemTest.m in Sources */,
-				2510FF5A15E36C9A005F8002 /* UploadMediaTest.m in Sources */,
-				2510FF5C15E36C9E005F8002 /* DeleteItemTest.m in Sources */,
-				2510FF6215E36FA3005F8002 /* ReadItemsIgnoreCacheTest.m in Sources */,
-				2510FF6415E384EB005F8002 /* ReadItemsCPTest.m in Sources */,
-				2510FF6615E38502005F8002 /* ReadItemsCTest.m in Sources */,
-				2510FF6715E38502005F8002 /* ReadItemsPTest.m in Sources */,
-				2510FF6815E38502005F8002 /* ReadItemsSCPTest.m in Sources */,
-				2510FF6915E38502005F8002 /* ReadItemsSCTest.m in Sources */,
-				2510FF6A15E38502005F8002 /* ReadItemsSPTest.m in Sources */,
-				2510FF6B15E38502005F8002 /* ReadItemsSTest.m in Sources */,
-				2510FF6C15E38502005F8002 /* ReadItemsTest.m in Sources */,
-				2510FF6D15E38502005F8002 /* ReadItemsWithQueryTest.m in Sources */,
-				2510FF6E15E38502005F8002 /* RootBranchReadItemTest.m in Sources */,
+				2510007B15E3B94A005F8002 /* RenderingHTMLTest.m in Sources */,
+				2510007D15E3BA66005F8002 /* ReadItemsCPTest.m in Sources */,
+				2510007E15E3BA66005F8002 /* ReadItemsCTest.m in Sources */,
+				2510007F15E3BA66005F8002 /* ReadItemsPTest.m in Sources */,
+				2510008015E3BA66005F8002 /* ReadItemsSCPTest.m in Sources */,
+				2510008115E3BA66005F8002 /* ReadItemsSCTest.m in Sources */,
+				2510008215E3BA66005F8002 /* ReadItemsSPTest.m in Sources */,
+				2510008315E3BA66005F8002 /* ReadItemsSTest.m in Sources */,
+				2510008415E3BA66005F8002 /* ReadItemsTest.m in Sources */,
+				2510008515E3BA66005F8002 /* ReadItemsWithQueryTest.m in Sources */,
+				2510008615E3BA66005F8002 /* RootBranchReadItemTest.m in Sources */,
+				2510009115E3BA6A005F8002 /* PagingItemsTest.m in Sources */,
+				2510009215E3BA6A005F8002 /* ReadPagingItemsAuthTest.m in Sources */,
+				2510009515E3BA6D005F8002 /* LanguageReaderTest.m in Sources */,
+				2510009715E3BA71005F8002 /* GetFieldFromItemTest.m in Sources */,
+				2510009815E3BA71005F8002 /* GetFieldsFromItemReaderTest.m in Sources */,
+				2510009915E3BA71005F8002 /* GetFieldValueFromFieldTest.m in Sources */,
+				2510009A15E3BA71005F8002 /* ReadFieldsWithSecurityTest.m in Sources */,
+				2510009F15E3BA77005F8002 /* LanguageReaderNegativeTest.m in Sources */,
+				251000A015E3BA77005F8002 /* AuthErrorTest.m in Sources */,
+				251000A115E3BA77005F8002 /* FieldsErrorTest.m in Sources */,
+				251000A215E3BA77005F8002 /* InvalidPathErrorTest.m in Sources */,
+				251000A315E3BA77005F8002 /* InvalidRequestErrorTest.m in Sources */,
+				251000A415E3BA77005F8002 /* NoItemErrorTest.m in Sources */,
+				251000A515E3BA77005F8002 /* NoItemFieldErrorTest.m in Sources */,
+				251000A615E3BA77005F8002 /* ResponseErrorTest.m in Sources */,
+				251000A715E3BA77005F8002 /* AllNegativeItemsRemoveFirst.m in Sources */,
+				251000A815E3BA77005F8002 /* CreateItemNegativeTest.m in Sources */,
+				251000A915E3BA77005F8002 /* EditItemNegativeTest.m in Sources */,
+				251000AA15E3BA77005F8002 /* UploadMediaNegativeTest.m in Sources */,
+				251000AB15E3BA77005F8002 /* RemoveAllNegativeTests.m in Sources */,
+				251000B915E3BA7C005F8002 /* ReadItemsCacheTest.mm in Sources */,
+				251000BA15E3BA7C005F8002 /* ReadItemsIgnoreCacheTest.m in Sources */,
+				251000BD15E3BA82005F8002 /* ReadFieldsWithAuth.m in Sources */,
+				251000BE15E3BA82005F8002 /* ReadItemsCPTestAuth.m in Sources */,
+				251000BF15E3BA82005F8002 /* ReadItemsCTestAuth.m in Sources */,
+				251000C015E3BA82005F8002 /* ReadItemsPTestAuth.m in Sources */,
+				251000C115E3BA82005F8002 /* REadItemsSCPTestAuth.m in Sources */,
+				251000C215E3BA82005F8002 /* ReadItemsSCTestAuth.m in Sources */,
+				251000C315E3BA82005F8002 /* ReadItemsSPTestAuth.m in Sources */,
+				251000C415E3BA82005F8002 /* ReadItemsSTestAuth.m in Sources */,
+				251000CD15E3BA86005F8002 /* CreateItemPositiveTest.m in Sources */,
+				251000CE15E3BA86005F8002 /* AFisrtRemoveAll.m in Sources */,
+				251000CF15E3BA86005F8002 /* EditItemTest.m in Sources */,
+				251000D015E3BA86005F8002 /* UploadMediaTest.m in Sources */,
+				251000D115E3BA86005F8002 /* DeleteItemTest.m in Sources */,
+				251000D215E3BA86005F8002 /* DeleteAllItems.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,26 +746,53 @@
 				1BCC930C1511E11B00271BFD /* main.m in Sources */,
 				1BCC930D1511E11B00271BFD /* SCAsyncTestCase.m in Sources */,
 				1BCC930E1511E11B00271BFD /* SCGlobalSettings.m in Sources */,
-				25F56AD615DE90D7008804B4 /* GetFieldsFromItemReaderTest.m in Sources */,
-				25F56AD715DE90D7008804B4 /* GetFieldValueFromFieldTest.m in Sources */,
-				25F56AD815DE90D7008804B4 /* ReadFieldsWithSecurityTest.m in Sources */,
-				2510FF5115E36988005F8002 /* CreateItemPositiveTest.m in Sources */,
-				2510FF5315E36BD5005F8002 /* AFisrtRemoveAll.m in Sources */,
-				2510FF5515E36BDC005F8002 /* DeleteAllItems.m in Sources */,
-				2510FF5915E36C45005F8002 /* EditItemTest.m in Sources */,
-				2510FF5B15E36C9B005F8002 /* UploadMediaTest.m in Sources */,
-				2510FF5D15E36C9E005F8002 /* DeleteItemTest.m in Sources */,
-				2510FF6315E36FA3005F8002 /* ReadItemsIgnoreCacheTest.m in Sources */,
-				2510FF6515E384EC005F8002 /* ReadItemsCPTest.m in Sources */,
-				2510FF6F15E38502005F8002 /* ReadItemsCTest.m in Sources */,
-				2510FF7015E38502005F8002 /* ReadItemsPTest.m in Sources */,
-				2510FF7115E38502005F8002 /* ReadItemsSCPTest.m in Sources */,
-				2510FF7215E38502005F8002 /* ReadItemsSCTest.m in Sources */,
-				2510FF7315E38502005F8002 /* ReadItemsSPTest.m in Sources */,
-				2510FF7415E38502005F8002 /* ReadItemsSTest.m in Sources */,
-				2510FF7515E38502005F8002 /* ReadItemsTest.m in Sources */,
-				2510FF7615E38502005F8002 /* ReadItemsWithQueryTest.m in Sources */,
-				2510FF7715E38502005F8002 /* RootBranchReadItemTest.m in Sources */,
+				2510007C15E3B94B005F8002 /* RenderingHTMLTest.m in Sources */,
+				2510008715E3BA67005F8002 /* ReadItemsCPTest.m in Sources */,
+				2510008815E3BA67005F8002 /* ReadItemsCTest.m in Sources */,
+				2510008915E3BA67005F8002 /* ReadItemsPTest.m in Sources */,
+				2510008A15E3BA67005F8002 /* ReadItemsSCPTest.m in Sources */,
+				2510008B15E3BA67005F8002 /* ReadItemsSCTest.m in Sources */,
+				2510008C15E3BA67005F8002 /* ReadItemsSPTest.m in Sources */,
+				2510008D15E3BA67005F8002 /* ReadItemsSTest.m in Sources */,
+				2510008E15E3BA67005F8002 /* ReadItemsTest.m in Sources */,
+				2510008F15E3BA67005F8002 /* ReadItemsWithQueryTest.m in Sources */,
+				2510009015E3BA67005F8002 /* RootBranchReadItemTest.m in Sources */,
+				2510009315E3BA6A005F8002 /* PagingItemsTest.m in Sources */,
+				2510009415E3BA6A005F8002 /* ReadPagingItemsAuthTest.m in Sources */,
+				2510009615E3BA6D005F8002 /* LanguageReaderTest.m in Sources */,
+				2510009B15E3BA72005F8002 /* GetFieldFromItemTest.m in Sources */,
+				2510009C15E3BA72005F8002 /* GetFieldsFromItemReaderTest.m in Sources */,
+				2510009D15E3BA72005F8002 /* GetFieldValueFromFieldTest.m in Sources */,
+				2510009E15E3BA72005F8002 /* ReadFieldsWithSecurityTest.m in Sources */,
+				251000AC15E3BA77005F8002 /* LanguageReaderNegativeTest.m in Sources */,
+				251000AD15E3BA77005F8002 /* AuthErrorTest.m in Sources */,
+				251000AE15E3BA77005F8002 /* FieldsErrorTest.m in Sources */,
+				251000AF15E3BA77005F8002 /* InvalidPathErrorTest.m in Sources */,
+				251000B015E3BA77005F8002 /* InvalidRequestErrorTest.m in Sources */,
+				251000B115E3BA77005F8002 /* NoItemErrorTest.m in Sources */,
+				251000B215E3BA77005F8002 /* NoItemFieldErrorTest.m in Sources */,
+				251000B315E3BA77005F8002 /* ResponseErrorTest.m in Sources */,
+				251000B415E3BA77005F8002 /* AllNegativeItemsRemoveFirst.m in Sources */,
+				251000B515E3BA77005F8002 /* CreateItemNegativeTest.m in Sources */,
+				251000B615E3BA77005F8002 /* EditItemNegativeTest.m in Sources */,
+				251000B715E3BA77005F8002 /* UploadMediaNegativeTest.m in Sources */,
+				251000B815E3BA77005F8002 /* RemoveAllNegativeTests.m in Sources */,
+				251000BB15E3BA7D005F8002 /* ReadItemsCacheTest.mm in Sources */,
+				251000BC15E3BA7D005F8002 /* ReadItemsIgnoreCacheTest.m in Sources */,
+				251000C515E3BA83005F8002 /* ReadFieldsWithAuth.m in Sources */,
+				251000C615E3BA83005F8002 /* ReadItemsCPTestAuth.m in Sources */,
+				251000C715E3BA83005F8002 /* ReadItemsCTestAuth.m in Sources */,
+				251000C815E3BA83005F8002 /* ReadItemsPTestAuth.m in Sources */,
+				251000C915E3BA83005F8002 /* REadItemsSCPTestAuth.m in Sources */,
+				251000CA15E3BA83005F8002 /* ReadItemsSCTestAuth.m in Sources */,
+				251000CB15E3BA83005F8002 /* ReadItemsSPTestAuth.m in Sources */,
+				251000CC15E3BA83005F8002 /* ReadItemsSTestAuth.m in Sources */,
+				251000D315E3BA87005F8002 /* CreateItemPositiveTest.m in Sources */,
+				251000D415E3BA87005F8002 /* AFisrtRemoveAll.m in Sources */,
+				251000D515E3BA87005F8002 /* EditItemTest.m in Sources */,
+				251000D615E3BA87005F8002 /* UploadMediaTest.m in Sources */,
+				251000D715E3BA87005F8002 /* DeleteItemTest.m in Sources */,
+				251000D815E3BA87005F8002 /* DeleteAllItems.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

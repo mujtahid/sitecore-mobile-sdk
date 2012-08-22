@@ -9,6 +9,7 @@ extern NSString* const SCWebApiCreatorLogin;
 extern NSString* const SCWebApiCreatorPassword;
 extern NSUInteger SCProductsAllFieldsCount;
 extern NSUInteger SCCommunityAllFieldsCount;
+extern NSUInteger SCCommunityAllAdminFieldsCount;
 extern NSUInteger SCCommunityChildrenCount;
 extern NSUInteger SCProductsChildrenItemsCount;
 extern NSUInteger SCContentsChildrenItemsCount;

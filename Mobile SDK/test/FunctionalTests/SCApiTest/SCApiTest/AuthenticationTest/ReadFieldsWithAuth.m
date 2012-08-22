@@ -29,7 +29,7 @@
                                            selector: _cmd ];
 
     NSLog( @"items_: %@", items_ );
-    NSLog( @"items_fields_: %@", [ [ items_ objectAtIndex: 0 ] readFieldsByName ]);
+    NSLog( @"items_fields_: %@", [ items_[ 0 ] readFieldsByName ]);
     GHAssertTrue( apiContext_ != nil, @"OK" );
 
     //test get item with auth
@@ -38,7 +38,7 @@
     SCItem* item_ = nil;
     //test product item
     {
-        item_ = [ items_ objectAtIndex: 0 ];      
+        item_ = items_[ 0 ];
         GHAssertTrue( item_.parent == nil, @"OK" );
         GHAssertTrue( [ item_.displayName isEqualToString: @"ClimbingPhotography" ], @"OK" );
         NSLog( @"item_children: %@", [item_ allChildren] );

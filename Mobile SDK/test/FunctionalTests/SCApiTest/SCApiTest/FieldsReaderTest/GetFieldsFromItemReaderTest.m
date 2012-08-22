@@ -897,4 +897,46 @@
     GHAssertTrue( [ value_item_ isEqual: link_data_ ], @"OK" );
 }
 
+-(void)testGetAllFieldsIncludingStandardFields
+{
+    __weak __block SCApiContext* apiContext_ = nil;
+    __block SCItem* item_ = nil;
+    
+    void (^block_)(JFFSimpleBlock) = ^void( JFFSimpleBlock didFinishCallback_ )
+    {
+        @autoreleasepool
+        {
+            NSString* path_ = @"/sitecore/content/Nicam/Community";
+            apiContext_ = [ SCApiContext contextWithHost: SCWebApiHostName
+                                                   login: SCWebApiAdminLogin
+                                                password: SCWebApiAdminPassword];
+            SCItemsReaderRequest* request_ = [ SCItemsReaderRequest requestWithItemPath: path_
+                                                                            fieldsNames: nil ];
+            request_.scope = SCItemReaderSelfScope;
+            [ apiContext_ itemsReaderWithRequest: request_ ]( ^( NSArray* result_, NSError* error_ )
+                                                             {
+                                                                 if ( [ result_ count ] > 0 )
+                                                                 {
+                                                                     item_ = [ result_ objectAtIndex: 0 ];
+                                                                 }
+                                                                 didFinishCallback_();
+                                                             } );
+        }
+    };
+    
+    [ self performAsyncRequestOnMainThreadWithBlock: block_
+                                           selector: _cmd ];
+    
+    GHAssertTrue( apiContext_ != nil, @"OK" );
+    GHAssertTrue( item_ != nil, @"OK" );
+    //fields test
+    GHAssertTrue( [ item_ readFieldsByName ] != nil, @"OK" );
+    NSLog( @"[ [ item_ readFieldsByName ] count ]: %d", [ [ item_ readFieldsByName ] count ] );
+    NSLog( @"fields: %@", [ item_ readFieldsByName ] );
+    GHAssertTrue( [ [ item_ readFieldsByName ] count ] > SCCommunityAllAdminFieldsCount, @"OK" );
+    SCField* field_ = [ item_ fieldWithName: @"__Display name" ];
+    GHAssertTrue( [ field_ rawValue ] == [ item_ displayName ], @"OK" );
+    
+}
+
 @end

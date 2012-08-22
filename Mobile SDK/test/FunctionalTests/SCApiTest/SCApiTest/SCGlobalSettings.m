@@ -16,7 +16,8 @@ NSString* const SCWebApiCreatorPassword = @"creator";
 NSUInteger SCProductsAllFieldsCount = 4;
 NSUInteger SCNormalLensesAllFieldsCount = 10;
 NSUInteger SCLensesAllFieldsCount = 3;
-NSUInteger SCCommunityAllFieldsCount = 8;
+NSUInteger SCCommunityAllFieldsCount = 4;
+NSUInteger SCCommunityAllAdminFieldsCount = 12;
 NSUInteger SCCommunityChildrenCount = 4;
 
 NSUInteger SCProductsChildrenItemsCount = 7;
